@@ -69,7 +69,7 @@ flutter_icons:
   image_path: "assets/images/logo.png"
 
 flutter_gen:
-  output: lib/ui/gen/
+  output: lib/ui/assets/
   line_length: 80
   integrations:
     flutter_svg: true
