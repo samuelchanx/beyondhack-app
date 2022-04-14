@@ -7,10 +7,12 @@ import 'package:flutter/material.dart';
 class ChatBubble extends StatelessWidget {
   final String text;
   final bool rotated;
+  final Function? onTap;
   const ChatBubble({
     Key? key,
     required this.text,
     this.rotated = false,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -24,6 +26,8 @@ class ChatBubble extends StatelessWidget {
         ),
         Text(text).fontSize(18).positioned(top: 10, left: 14),
       ],
-    );
+    ).bounce(onTap: () {
+      onTap?.call();
+    });
   }
 }
