@@ -1,0 +1,44 @@
+targets:
+  $default:
+    sources:
+      - graphql/**
+      - lib/**
+      - schema.graphql
+      - $package$
+    builders:
+      artemis:
+        options:
+          schema_mapping:
+            - schema: schema.graphql
+              queries_glob: graphql/user.graphql
+              output: lib/data/model/graphql/user/user.dart
+          # fragments_glob: graphql/**.fragment.graphql
+          scalar_mapping:
+            - graphql_type: date
+              dart_type: DateTime
+              custom_parser_import: "package:beyondhack/data/model/graphql/graphql_mapper.dart"
+            - graphql_type: timestamptz
+              dart_type: DateTime
+              custom_parser_import: "package:beyondhack/data/model/graphql/graphql_mapper.dart"
+            - graphql_type: timestamp
+              dart_type: DateTime
+              custom_parser_import: "package:beyondhack/data/model/graphql/graphql_mapper.dart"
+            - graphql_type: jsonb
+              dart_type: Json
+              custom_parser_import: "package:beyondhack/data/model/graphql/graphql_mapper.dart"
+              use_custom_parser: true
+            - graphql_type: timetz
+              dart_type: DateTime
+              custom_parser_import: "package:beyondhack/data/model/graphql/graphql_mapper.dart"
+              use_custom_parser: true
+            - graphql_type: time
+              dart_type: DateTime
+              custom_parser_import: "package:beyondhack/data/model/graphql/graphql_mapper.dart"
+              use_custom_parser: true
+            - graphql_type: numeric
+              dart_type: double
+            - graphql_type: bigint
+              dart_type: intg
+      json_serializable:
+        options:
+          explicit_to_json: true

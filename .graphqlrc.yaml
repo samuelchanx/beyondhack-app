@@ -1,0 +1,3 @@
+name: GraphQL API
+schema: "./schema.graphql"
+documents: "./graphql/**/*.graphql"
