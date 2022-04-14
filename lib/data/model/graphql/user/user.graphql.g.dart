@@ -29,12 +29,63 @@ Map<String, dynamic> _$GetUser$QueryRootToJson(GetUser$QueryRoot instance) =>
       'app_user_by_pk': instance.appUserByPk?.toJson(),
     };
 
+AddUser$MutationRoot$AppUser _$AddUser$MutationRoot$AppUserFromJson(
+        Map<String, dynamic> json) =>
+    AddUser$MutationRoot$AppUser()
+      ..id = json['id'] as String
+      ..name = json['name'] as String?
+      ..gender = json['gender'] as String?
+      ..createdAt = fromGraphQLTimestampNullableToDartDateTimeNullable(
+          json['createdAt'] as String?)
+      ..spaceLocation = json['spaceLocation'] as String?
+      ..loginProvider = json['loginProvider'] as String?
+      ..lastOnline = fromGraphQLTimestampNullableToDartDateTimeNullable(
+          json['lastOnline'] as String?);
+
+Map<String, dynamic> _$AddUser$MutationRoot$AppUserToJson(
+        AddUser$MutationRoot$AppUser instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'gender': instance.gender,
+      'createdAt': fromDartDateTimeNullableToGraphQLTimestampNullable(
+          instance.createdAt),
+      'spaceLocation': instance.spaceLocation,
+      'loginProvider': instance.loginProvider,
+      'lastOnline': fromDartDateTimeNullableToGraphQLTimestampNullable(
+          instance.lastOnline),
+    };
+
+AddUser$MutationRoot _$AddUser$MutationRootFromJson(
+        Map<String, dynamic> json) =>
+    AddUser$MutationRoot()
+      ..insertAppUserOne = json['insert_app_user_one'] == null
+          ? null
+          : AddUser$MutationRoot$AppUser.fromJson(
+              json['insert_app_user_one'] as Map<String, dynamic>);
+
+Map<String, dynamic> _$AddUser$MutationRootToJson(
+        AddUser$MutationRoot instance) =>
+    <String, dynamic>{
+      'insert_app_user_one': instance.insertAppUserOne?.toJson(),
+    };
+
 GetUserArguments _$GetUserArgumentsFromJson(Map<String, dynamic> json) =>
     GetUserArguments(
       id: json['id'] as String,
     );
 
 Map<String, dynamic> _$GetUserArgumentsToJson(GetUserArguments instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+    };
+
+AddUserArguments _$AddUserArgumentsFromJson(Map<String, dynamic> json) =>
+    AddUserArguments(
+      id: json['id'] as String,
+    );
+
+Map<String, dynamic> _$AddUserArgumentsToJson(AddUserArguments instance) =>
     <String, dynamic>{
       'id': instance.id,
     };

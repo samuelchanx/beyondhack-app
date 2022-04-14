@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:app_links/app_links.dart';
+import 'package:beyondhack/data/datasource/remote_datasource.dart';
+import 'package:beyondhack/data/model/graphql/user/user.dart';
 import 'package:beyondhack/data/model/result/result.f.dart';
 import 'package:beyondhack/ui/utils/ui_helper.dart';
 import 'package:beyondhack/utils/run_loading_future.dart';
@@ -55,6 +57,20 @@ class AuthRepository {
       email: email,
       password: password,
     ));
+    return results is Success;
+  }
+
+  Future<bool> signUpWithEmailPassword(String email, String password) async {
+    final results = await runAsync(client.auth.signUp(
+      email: email,
+      password: password,
+    ));
+    if (results is Success) {
+      final apiClient = ApiClient();
+      await runAsync(apiClient.generalMutation(
+        AddUserMutation(variables: AddUserArguments(id: uid!)),
+      ));
+    }
     return results is Success;
   }
 
