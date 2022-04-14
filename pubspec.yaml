@@ -46,6 +46,8 @@ dependencies:
   sign_button: ^2.0.2
   flutter_login: ^3.2.0
   font_awesome_flutter: 
+  url_launcher: 
+  app_links: 
 
 dev_dependencies:
   flutter_test:

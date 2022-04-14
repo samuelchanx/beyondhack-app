@@ -1,3 +1,6 @@
+import 'package:beyondhack/data/repository/auth/auth_repository.dart';
+import 'package:beyondhack/features/home/home_page.dart';
+import 'package:beyondhack/routes/app_pages.dart';
 import 'package:beyondhack/ui/assets/assets.gen.dart';
 import 'package:beyondhack/ui/components/gradient_decoration.dart';
 import 'package:beyondhack/ui/utils/ui_helper.dart';
@@ -10,11 +13,17 @@ import 'package:get/instance_manager.dart';
 import 'package:logger/logger.dart';
 import 'package:sign_button/sign_button.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final authRepository = AuthRepository.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +31,16 @@ class LoginPage extends StatelessWidget {
         child: FlutterLogin(
           title: 'BeyondShare',
           logo: AssetImage(Assets.images.logoTransparent.path),
-          onLogin: (data) {
+          onLogin: (data) async {
             logger.d(data);
+            final success = await authRepository.signInWithEmailPassword(
+              data.name,
+              data.password,
+            );
+            if (!success) {
+              return 'Failed to login';
+            }
+            return null;
           },
           onSignup: (data) {
             logger.d(data);
@@ -51,14 +68,12 @@ class LoginPage extends StatelessWidget {
             ),
           ],
           onSubmitAnimationCompleted: () {
-            // Navigator.of(context).pushReplacement(MaterialPageRoute(
-            //   builder: (context) => DashboardScreen(),
-            // ));
+            Get.offAllNamed(routeName(HomePage));
           },
           onRecoverPassword: (data) {
             logger.d(data);
           },
-        ).width(Get.width),
+        ),
       ),
     );
   }
