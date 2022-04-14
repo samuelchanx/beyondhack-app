@@ -1,7 +1,9 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:beyondhack/data/repository/auth/auth_repository.dart';
 import 'package:beyondhack/features/auth/pages/login_page.dart';
 import 'package:beyondhack/routes/app_pages.dart';
 import 'package:beyondhack/ui/assets/assets.gen.dart';
+import 'package:beyondhack/ui/utils/ui_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:styled_widget/styled_widget.dart';
@@ -33,6 +35,8 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
+    // Try to sign in with stored credentials if logged in
+    runAsync(AuthRepository.instance.client.auth.signInWithStoredCredentials());
     Future.delayed(const Duration(seconds: 2), () {
       Get.offAllNamed(routeName(LoginPage));
     });
