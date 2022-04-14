@@ -12,12 +12,12 @@ class ImagePickerUtils {
     final results = await showModalActionSheet(
       context: Get.context!,
       actions: [
-        SheetAction(
+        const SheetAction(
           label: 'Camera',
           icon: Icons.camera_alt,
           key: true,
         ),
-        SheetAction(label: 'Gallery', icon: Icons.photo, key: false),
+        const SheetAction(label: 'Gallery', icon: Icons.photo, key: false),
       ],
     );
     if (results == null) {
