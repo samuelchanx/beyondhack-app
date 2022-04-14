@@ -22,12 +22,16 @@ class HomePage extends StatelessWidget {
         floatingActionButton: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            AppStyledIcon(
+            const AppStyledIcon(
               icon: Icons.location_on,
               iconSize: 32,
-            ).bounce(onTap: () {}),
+            ).bounce(
+              onTap: () {
+                logger.i('Tap location');
+              },
+            ),
             const SizedBox(height: 8),
-            AppStyledIcon(
+            const AppStyledIcon(
               icon: Icons.search,
               iconSize: 32,
             ).bounce(onTap: () {
@@ -91,7 +95,7 @@ class HomePage extends StatelessWidget {
                 const AppStyledIcon(icon: Icons.more_horiz),
                 const Text(
                   "My Space",
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.black,
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
