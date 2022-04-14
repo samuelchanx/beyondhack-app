@@ -1,23 +1,15 @@
 import 'dart:async';
+import 'package:beyondhack/data/datasource/data_utils.dart';
+import 'package:beyondhack/data/repository/auth/auth_repository.dart';
+import 'package:beyondhack/utils/globals.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:graphql/client.dart' hide JsonSerializable;
-import 'package:nhost_sdk/nhost_sdk.dart';
 import 'package:nhost_graphql_adapter/nhost_graphql_adapter.dart';
 import 'package:artemis/artemis.dart';
-import 'package:taxieasy_app/data/model/graphql/district/district.graphql.dart';
-import 'package:taxieasy_app/data/utils/data_utils.dart';
-import 'package:taxieasy_app/services/auth_service.dart';
-import 'package:taxieasy_app/utils/globals.dart';
 
 class ApiClient {
-  static Map<String, String> get apiHeaders {
-    return {
-      'Authorization': 'Bearer ${AuthService.instance.client.auth.accessToken}',
-    };
-  }
-
   ApiClient() {
-    final nhostLink = combinedLinkForNhost(AuthService.instance.client);
+    final nhostLink = combinedLinkForNhost(AuthRepository.instance.client);
 
     final loggingMiddleware = Link.function((request, [nextLink]) {
       return nextLink!(request).transform(
