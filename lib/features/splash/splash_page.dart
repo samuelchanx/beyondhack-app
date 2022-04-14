@@ -46,7 +46,7 @@ class _SplashPageState extends State<SplashPage> {
       isLoggedIn = true;
     } catch (e) {
       isLoggedIn = false;
-      logger.i('Not logged in');
+      logger.i('Not logged in: $e');
     }
   }
 

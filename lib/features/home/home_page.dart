@@ -1,4 +1,6 @@
 import 'package:beyondhack/data/repository/auth/auth_repository.dart';
+import 'package:beyondhack/features/wardrobe/my_wardrobe_page.dart';
+import 'package:beyondhack/routes/app_pages.dart';
 import 'package:beyondhack/ui/assets/assets.gen.dart';
 import 'package:beyondhack/ui/components/app_styled_icon.dart';
 import 'package:beyondhack/ui/components/chat_bubble.dart';
@@ -60,9 +62,12 @@ class HomePage extends StatelessWidget {
                   const ChatBubble(
                     text: '🎨',
                   ).positioned(left: Get.width * 0.4, top: 20),
-                  const ChatBubble(
+                  ChatBubble(
                     text: '👚',
                     rotated: true,
+                    onTap: () {
+                      Get.toNamed(routeName(MyWardrobePage));
+                    },
                   ).positioned(left: Get.width * 0.2, top: 280),
                   const ChatBubble(
                     text: '😊',
