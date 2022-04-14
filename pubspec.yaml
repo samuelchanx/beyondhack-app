@@ -48,6 +48,7 @@ dependencies:
   font_awesome_flutter: 
   url_launcher: 
   app_links: 
+  chat_bubbles: ^1.2.0
 
 dev_dependencies:
   flutter_test:

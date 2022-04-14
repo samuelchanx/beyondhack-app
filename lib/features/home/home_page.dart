@@ -1,6 +1,8 @@
 import 'package:beyondhack/data/repository/auth/auth_repository.dart';
 import 'package:beyondhack/ui/assets/assets.gen.dart';
+import 'package:beyondhack/ui/components/chat_bubble.dart';
 import 'package:beyondhack/ui/utils/ui_helper.dart';
+import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,6 +25,7 @@ class HomePage extends StatelessWidget {
               child: Stack(
                 children: [
                   Container(
+                    height: 588,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(Assets.images.homeBackground.path),
@@ -30,6 +33,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  ChatBubble().positioned(left: Get.width * 0.4, top: 20),
                 ],
               ).height(
                 Get.height * 0.7,
