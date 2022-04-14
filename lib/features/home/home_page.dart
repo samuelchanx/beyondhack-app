@@ -33,7 +33,17 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ChatBubble().positioned(left: Get.width * 0.4, top: 20),
+                  const ChatBubble(
+                    text: '🎨',
+                  ).positioned(left: Get.width * 0.4, top: 20),
+                  const ChatBubble(
+                    text: '👚',
+                    rotated: true,
+                  ).positioned(left: Get.width * 0.2, top: 280),
+                  const ChatBubble(
+                    text: '😊',
+                    rotated: true,
+                  ).positioned(left: Get.width * 0.8, top: 180),
                 ],
               ).height(
                 Get.height * 0.7,
