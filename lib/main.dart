@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'BeyondHack',
       theme: appTheme,
+      debugShowCheckedModeBanner: false,
       initialRoute: routeName(SplashPage),
       getPages: AppPages.pages,
     );
