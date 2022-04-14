@@ -13,41 +13,41 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  adaptive_dialog: 
+  adaptive_dialog:
   get: ^4.6.1
-  freezed: 
-  image_picker: 
+  freezed:
+  image_picker:
   firebase_core: ^1.13.1
-  json_serializable: 
-  json_annotation: 
+  json_serializable:
+  json_annotation:
   animate_do: ^2.1.0
   firebase_auth: ^3.3.11
-  styled_widget: 
+  styled_widget:
   intl: ^0.17.0
-  flutter_svg: 
+  flutter_svg:
   nhost_sdk: ^3.0.1
   nhost_flutter_auth: ^2.0.1
-  mime: 
-  path: 
-  graphql: 
+  mime:
+  path:
+  graphql:
   nhost_graphql_adapter: ^2.0.1
   logger:
-  dartx: 
+  dartx:
   flutter_easyloading: ^3.0.3
   crypto: ^3.0.1
-  freezed_annotation: 
+  freezed_annotation:
   shared_preferences:
-  table_calendar: 
-  auto_size_text: 
-  cached_network_image: 
+  table_calendar:
+  auto_size_text:
+  cached_network_image:
   flame: ^1.1.0
-  flame_audio: 
+  flame_audio:
   audioplayers: ^0.20.1
   sign_button: ^2.0.2
   flutter_login: ^3.2.0
-  font_awesome_flutter: 
-  url_launcher: 
-  app_links: 
+  font_awesome_flutter:
+  url_launcher:
+  app_links:
   chat_bubbles: ^1.2.0
 
 dev_dependencies:
@@ -57,9 +57,10 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   build_runner: ^2.1.2
   flutter_gen_runner: ^3.1.1
-  artemis: 
+  artemis:
   flutter_launcher_icons:
-
+dependency_overrides:
+  gql: "0.13.1-alpha+1645425888336"
 flutter:
   uses-material-design: true
 
