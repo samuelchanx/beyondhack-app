@@ -49,6 +49,7 @@ dependencies:
   url_launcher:
   app_links:
   chat_bubbles: ^1.2.0
+  cloud_functions: ^3.2.12
 
 dev_dependencies:
   flutter_test:
