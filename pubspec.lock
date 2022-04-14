@@ -535,12 +535,12 @@ packages:
     source: hosted
     version: "2.0.2"
   gql:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: gql
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.1"
+    version: "0.13.1-alpha+1645425888336"
   gql_code_builder2:
     dependency: transitive
     description:
