@@ -41,16 +41,16 @@ class _MyWardrobePageState extends State<MyWardrobePage> with GetViewModel<MyWar
       child: Scaffold(
         bottomNavigationBar: GetBuilder<MyWardrobeViewmodel>(builder: (viewModel) {
           if (viewModel.selectedWardrobeItems.isEmpty) {
-            return SizedBox();
+            return const SizedBox();
           }
           return Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              AppElevatedButton(
+              const AppElevatedButton(
                 text: 'Change avalibility',
               ),
-              AppElevatedButton(
+              const AppElevatedButton(
                 text: 'Delete',
               ),
             ],
