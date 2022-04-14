@@ -7,8 +7,17 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:nhost_sdk/nhost_sdk.dart';
 
+import '../../../utils/globals.dart';
+import '../../datasource/datasource_constants.dart';
+
 class AuthRepository {
   static AuthRepository? _instance;
+
+  static Map<String, String> get apiHeaders {
+    return {
+      'Authorization': 'Bearer ${AuthRepository.instance.client.auth.accessToken}',
+    };
+  }
 
   NhostClient get client => nHostClient;
 
