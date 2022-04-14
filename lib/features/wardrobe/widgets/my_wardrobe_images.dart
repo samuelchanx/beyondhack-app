@@ -31,9 +31,11 @@ class MyWardrobeImages extends StatelessWidget with GetViewModel<MyWardrobeViewm
                 )
                 .bounce(
               onTap: () {
-                viewModel.selectedWardrobeItems.removeWhere(
-                  (element) => element.id == index,
-                );
+                viewModel
+                  ..selectedWardrobeItems.removeWhere(
+                    (element) => element.id == index,
+                  )
+                  ..update();
               },
             );
           }
