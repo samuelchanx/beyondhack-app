@@ -1,16 +1,25 @@
-# beyondhack
+# BeyondHack
 
-A new Flutter project.
+## App
 
-## Getting Started
+## Server
 
-This project is a starting point for a Flutter application.
+### Authentication
 
-A few resources to get you started if this is your first Flutter project:
+We have used nHost as our authentication platform, which provides easy-to-integrate platform for authentication.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Database
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For the database, we have used PostgreSQL as our server backend, which provides feature-rich and type-safe features.
+
+### Server API
+
+#### Authentication 
+
+#### Business Logic
+
+For more complicated business logic, such as image recognition APIs, we have adopted Firebase Functions as our backend. It provides 
+
+#### Image Recognition
+
+We have used AWS Rekognition for the features of 
