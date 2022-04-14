@@ -100,7 +100,480 @@ input String_comparison_exp {
 columns and relationships of "app_user"
 """
 type app_user {
+  """An array relationship"""
+  chatroom_messages(
+    """distinct select on columns"""
+    distinct_on: [chatroom_message_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_message_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_message_bool_exp
+  ): [chatroom_message!]!
+
+  """An aggregate relationship"""
+  chatroom_messages_aggregate(
+    """distinct select on columns"""
+    distinct_on: [chatroom_message_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_message_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_message_bool_exp
+  ): chatroom_message_aggregate!
+
+  """An array relationship"""
+  chatrooms(
+    """distinct select on columns"""
+    distinct_on: [chatroom_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_bool_exp
+  ): [chatroom!]!
+
+  """An array relationship"""
+  chatroomsByCreateuserid(
+    """distinct select on columns"""
+    distinct_on: [chatroom_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_bool_exp
+  ): [chatroom!]!
+
+  """An aggregate relationship"""
+  chatroomsByCreateuserid_aggregate(
+    """distinct select on columns"""
+    distinct_on: [chatroom_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_bool_exp
+  ): chatroom_aggregate!
+
+  """An aggregate relationship"""
+  chatrooms_aggregate(
+    """distinct select on columns"""
+    distinct_on: [chatroom_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_bool_exp
+  ): chatroom_aggregate!
+
+  """An array relationship"""
+  clothingStatusesByOwnerid(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): [clothing_status!]!
+
+  """An aggregate relationship"""
+  clothingStatusesByOwnerid_aggregate(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): clothing_status_aggregate!
+
+  """An array relationship"""
+  clothing_statuses(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): [clothing_status!]!
+
+  """An aggregate relationship"""
+  clothing_statuses_aggregate(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): clothing_status_aggregate!
+
+  """An array relationship"""
+  clothings(
+    """distinct select on columns"""
+    distinct_on: [clothing_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_bool_exp
+  ): [clothing!]!
+
+  """An aggregate relationship"""
+  clothings_aggregate(
+    """distinct select on columns"""
+    distinct_on: [clothing_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_bool_exp
+  ): clothing_aggregate!
+  createdAt: timestamp
+  gender: String
+
+  """An array relationship"""
+  group_members(
+    """distinct select on columns"""
+    distinct_on: [group_member_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_member_order_by!]
+
+    """filter the rows returned"""
+    where: group_member_bool_exp
+  ): [group_member!]!
+
+  """An aggregate relationship"""
+  group_members_aggregate(
+    """distinct select on columns"""
+    distinct_on: [group_member_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_member_order_by!]
+
+    """filter the rows returned"""
+    where: group_member_bool_exp
+  ): group_member_aggregate!
+
+  """An array relationship"""
+  groups(
+    """distinct select on columns"""
+    distinct_on: [group_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_order_by!]
+
+    """filter the rows returned"""
+    where: group_bool_exp
+  ): [group!]!
+
+  """An aggregate relationship"""
+  groups_aggregate(
+    """distinct select on columns"""
+    distinct_on: [group_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_order_by!]
+
+    """filter the rows returned"""
+    where: group_bool_exp
+  ): group_aggregate!
   id: String!
+  lastOnline: timestamp
+  loginProvider: String
+  name: String
+  spaceLocation: String
+
+  """An array relationship"""
+  userFollowingsByUserid(
+    """distinct select on columns"""
+    distinct_on: [user_following_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_following_order_by!]
+
+    """filter the rows returned"""
+    where: user_following_bool_exp
+  ): [user_following!]!
+
+  """An aggregate relationship"""
+  userFollowingsByUserid_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_following_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_following_order_by!]
+
+    """filter the rows returned"""
+    where: user_following_bool_exp
+  ): user_following_aggregate!
+
+  """An array relationship"""
+  user_avatars(
+    """distinct select on columns"""
+    distinct_on: [user_avatar_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_avatar_order_by!]
+
+    """filter the rows returned"""
+    where: user_avatar_bool_exp
+  ): [user_avatar!]!
+
+  """An aggregate relationship"""
+  user_avatars_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_avatar_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_avatar_order_by!]
+
+    """filter the rows returned"""
+    where: user_avatar_bool_exp
+  ): user_avatar_aggregate!
+
+  """An array relationship"""
+  user_followings(
+    """distinct select on columns"""
+    distinct_on: [user_following_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_following_order_by!]
+
+    """filter the rows returned"""
+    where: user_following_bool_exp
+  ): [user_following!]!
+
+  """An aggregate relationship"""
+  user_followings_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_following_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_following_order_by!]
+
+    """filter the rows returned"""
+    where: user_following_bool_exp
+  ): user_following_aggregate!
+
+  """An array relationship"""
+  user_wardrobes(
+    """distinct select on columns"""
+    distinct_on: [user_wardrobe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wardrobe_order_by!]
+
+    """filter the rows returned"""
+    where: user_wardrobe_bool_exp
+  ): [user_wardrobe!]!
+
+  """An aggregate relationship"""
+  user_wardrobes_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_wardrobe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wardrobe_order_by!]
+
+    """filter the rows returned"""
+    where: user_wardrobe_bool_exp
+  ): user_wardrobe_aggregate!
+
+  """An array relationship"""
+  user_wishlists(
+    """distinct select on columns"""
+    distinct_on: [user_wishlist_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wishlist_order_by!]
+
+    """filter the rows returned"""
+    where: user_wishlist_bool_exp
+  ): [user_wishlist!]!
+
+  """An aggregate relationship"""
+  user_wishlists_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_wishlist_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wishlist_order_by!]
+
+    """filter the rows returned"""
+    where: user_wishlist_bool_exp
+  ): user_wishlist_aggregate!
 }
 
 """
@@ -127,7 +600,26 @@ input app_user_bool_exp {
   _and: [app_user_bool_exp!]
   _not: app_user_bool_exp
   _or: [app_user_bool_exp!]
+  chatroom_messages: chatroom_message_bool_exp
+  chatrooms: chatroom_bool_exp
+  chatroomsByCreateuserid: chatroom_bool_exp
+  clothingStatusesByOwnerid: clothing_status_bool_exp
+  clothing_statuses: clothing_status_bool_exp
+  clothings: clothing_bool_exp
+  createdAt: timestamp_comparison_exp
+  gender: String_comparison_exp
+  group_members: group_member_bool_exp
+  groups: group_bool_exp
   id: String_comparison_exp
+  lastOnline: timestamp_comparison_exp
+  loginProvider: String_comparison_exp
+  name: String_comparison_exp
+  spaceLocation: String_comparison_exp
+  userFollowingsByUserid: user_following_bool_exp
+  user_avatars: user_avatar_bool_exp
+  user_followings: user_following_bool_exp
+  user_wardrobes: user_wardrobe_bool_exp
+  user_wishlists: user_wishlist_bool_exp
 }
 
 """
@@ -142,17 +634,48 @@ enum app_user_constraint {
 input type for inserting data into table "app_user"
 """
 input app_user_insert_input {
+  chatroom_messages: chatroom_message_arr_rel_insert_input
+  chatrooms: chatroom_arr_rel_insert_input
+  chatroomsByCreateuserid: chatroom_arr_rel_insert_input
+  clothingStatusesByOwnerid: clothing_status_arr_rel_insert_input
+  clothing_statuses: clothing_status_arr_rel_insert_input
+  clothings: clothing_arr_rel_insert_input
+  createdAt: timestamp
+  gender: String
+  group_members: group_member_arr_rel_insert_input
+  groups: group_arr_rel_insert_input
   id: String
+  lastOnline: timestamp
+  loginProvider: String
+  name: String
+  spaceLocation: String
+  userFollowingsByUserid: user_following_arr_rel_insert_input
+  user_avatars: user_avatar_arr_rel_insert_input
+  user_followings: user_following_arr_rel_insert_input
+  user_wardrobes: user_wardrobe_arr_rel_insert_input
+  user_wishlists: user_wishlist_arr_rel_insert_input
 }
 
 """aggregate max on columns"""
 type app_user_max_fields {
+  createdAt: timestamp
+  gender: String
   id: String
+  lastOnline: timestamp
+  loginProvider: String
+  name: String
+  spaceLocation: String
 }
 
 """aggregate min on columns"""
 type app_user_min_fields {
+  createdAt: timestamp
+  gender: String
   id: String
+  lastOnline: timestamp
+  loginProvider: String
+  name: String
+  spaceLocation: String
 }
 
 """
@@ -167,6 +690,16 @@ type app_user_mutation_response {
 }
 
 """
+input type for inserting object relation for remote table "app_user"
+"""
+input app_user_obj_rel_insert_input {
+  data: app_user_insert_input!
+
+  """upsert condition"""
+  on_conflict: app_user_on_conflict
+}
+
+"""
 on_conflict condition type for table "app_user"
 """
 input app_user_on_conflict {
@@ -177,7 +710,26 @@ input app_user_on_conflict {
 
 """Ordering options when selecting data from "app_user"."""
 input app_user_order_by {
+  chatroom_messages_aggregate: chatroom_message_aggregate_order_by
+  chatroomsByCreateuserid_aggregate: chatroom_aggregate_order_by
+  chatrooms_aggregate: chatroom_aggregate_order_by
+  clothingStatusesByOwnerid_aggregate: clothing_status_aggregate_order_by
+  clothing_statuses_aggregate: clothing_status_aggregate_order_by
+  clothings_aggregate: clothing_aggregate_order_by
+  createdAt: order_by
+  gender: order_by
+  group_members_aggregate: group_member_aggregate_order_by
+  groups_aggregate: group_aggregate_order_by
   id: order_by
+  lastOnline: order_by
+  loginProvider: order_by
+  name: order_by
+  spaceLocation: order_by
+  userFollowingsByUserid_aggregate: user_following_aggregate_order_by
+  user_avatars_aggregate: user_avatar_aggregate_order_by
+  user_followings_aggregate: user_following_aggregate_order_by
+  user_wardrobes_aggregate: user_wardrobe_aggregate_order_by
+  user_wishlists_aggregate: user_wishlist_aggregate_order_by
 }
 
 """primary key columns input for table: app_user"""
@@ -190,14 +742,38 @@ select columns of table "app_user"
 """
 enum app_user_select_column {
   """column name"""
+  createdAt
+
+  """column name"""
+  gender
+
+  """column name"""
   id
+
+  """column name"""
+  lastOnline
+
+  """column name"""
+  loginProvider
+
+  """column name"""
+  name
+
+  """column name"""
+  spaceLocation
 }
 
 """
 input type for updating data in table "app_user"
 """
 input app_user_set_input {
+  createdAt: timestamp
+  gender: String
   id: String
+  lastOnline: timestamp
+  loginProvider: String
+  name: String
+  spaceLocation: String
 }
 
 """
@@ -205,7 +781,25 @@ update columns of table "app_user"
 """
 enum app_user_update_column {
   """column name"""
+  createdAt
+
+  """column name"""
+  gender
+
+  """column name"""
   id
+
+  """column name"""
+  lastOnline
+
+  """column name"""
+  loginProvider
+
+  """column name"""
+  name
+
+  """column name"""
+  spaceLocation
 }
 
 """
@@ -1688,6 +2282,728 @@ type buckets_variance_fields {
   minUploadFileSize: Float
 }
 
+"""
+columns and relationships of "chatroom"
+"""
+type chatroom {
+  UserId: String
+
+  """An object relationship"""
+  appUserByCreateuserid: app_user
+
+  """An object relationship"""
+  app_user: app_user
+
+  """An array relationship"""
+  chatroom_messages(
+    """distinct select on columns"""
+    distinct_on: [chatroom_message_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_message_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_message_bool_exp
+  ): [chatroom_message!]!
+
+  """An aggregate relationship"""
+  chatroom_messages_aggregate(
+    """distinct select on columns"""
+    distinct_on: [chatroom_message_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_message_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_message_bool_exp
+  ): chatroom_message_aggregate!
+  createUserId: String
+  createdAt: timestamp
+  id: Int!
+}
+
+"""
+aggregated selection of "chatroom"
+"""
+type chatroom_aggregate {
+  aggregate: chatroom_aggregate_fields
+  nodes: [chatroom!]!
+}
+
+"""
+aggregate fields of "chatroom"
+"""
+type chatroom_aggregate_fields {
+  avg: chatroom_avg_fields
+  count(columns: [chatroom_select_column!], distinct: Boolean): Int!
+  max: chatroom_max_fields
+  min: chatroom_min_fields
+  stddev: chatroom_stddev_fields
+  stddev_pop: chatroom_stddev_pop_fields
+  stddev_samp: chatroom_stddev_samp_fields
+  sum: chatroom_sum_fields
+  var_pop: chatroom_var_pop_fields
+  var_samp: chatroom_var_samp_fields
+  variance: chatroom_variance_fields
+}
+
+"""
+order by aggregate values of table "chatroom"
+"""
+input chatroom_aggregate_order_by {
+  avg: chatroom_avg_order_by
+  count: order_by
+  max: chatroom_max_order_by
+  min: chatroom_min_order_by
+  stddev: chatroom_stddev_order_by
+  stddev_pop: chatroom_stddev_pop_order_by
+  stddev_samp: chatroom_stddev_samp_order_by
+  sum: chatroom_sum_order_by
+  var_pop: chatroom_var_pop_order_by
+  var_samp: chatroom_var_samp_order_by
+  variance: chatroom_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "chatroom"
+"""
+input chatroom_arr_rel_insert_input {
+  data: [chatroom_insert_input!]!
+
+  """upsert condition"""
+  on_conflict: chatroom_on_conflict
+}
+
+"""aggregate avg on columns"""
+type chatroom_avg_fields {
+  id: Float
+}
+
+"""
+order by avg() on columns of table "chatroom"
+"""
+input chatroom_avg_order_by {
+  id: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "chatroom". All fields are combined with a logical 'AND'.
+"""
+input chatroom_bool_exp {
+  UserId: String_comparison_exp
+  _and: [chatroom_bool_exp!]
+  _not: chatroom_bool_exp
+  _or: [chatroom_bool_exp!]
+  appUserByCreateuserid: app_user_bool_exp
+  app_user: app_user_bool_exp
+  chatroom_messages: chatroom_message_bool_exp
+  createUserId: String_comparison_exp
+  createdAt: timestamp_comparison_exp
+  id: Int_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "chatroom"
+"""
+enum chatroom_constraint {
+  """unique or primary key constraint"""
+  chatroom_pkey
+}
+
+"""
+input type for incrementing numeric columns in table "chatroom"
+"""
+input chatroom_inc_input {
+  id: Int
+}
+
+"""
+input type for inserting data into table "chatroom"
+"""
+input chatroom_insert_input {
+  UserId: String
+  appUserByCreateuserid: app_user_obj_rel_insert_input
+  app_user: app_user_obj_rel_insert_input
+  chatroom_messages: chatroom_message_arr_rel_insert_input
+  createUserId: String
+  createdAt: timestamp
+  id: Int
+}
+
+"""aggregate max on columns"""
+type chatroom_max_fields {
+  UserId: String
+  createUserId: String
+  createdAt: timestamp
+  id: Int
+}
+
+"""
+order by max() on columns of table "chatroom"
+"""
+input chatroom_max_order_by {
+  UserId: order_by
+  createUserId: order_by
+  createdAt: order_by
+  id: order_by
+}
+
+"""
+columns and relationships of "chatroom_message"
+"""
+type chatroom_message {
+  """An object relationship"""
+  app_user: app_user
+
+  """An object relationship"""
+  chatroom: chatroom
+  chatroomId: Int
+  content: String
+  createdAt: timestamp
+  id: Int!
+  userId: String
+}
+
+"""
+aggregated selection of "chatroom_message"
+"""
+type chatroom_message_aggregate {
+  aggregate: chatroom_message_aggregate_fields
+  nodes: [chatroom_message!]!
+}
+
+"""
+aggregate fields of "chatroom_message"
+"""
+type chatroom_message_aggregate_fields {
+  avg: chatroom_message_avg_fields
+  count(columns: [chatroom_message_select_column!], distinct: Boolean): Int!
+  max: chatroom_message_max_fields
+  min: chatroom_message_min_fields
+  stddev: chatroom_message_stddev_fields
+  stddev_pop: chatroom_message_stddev_pop_fields
+  stddev_samp: chatroom_message_stddev_samp_fields
+  sum: chatroom_message_sum_fields
+  var_pop: chatroom_message_var_pop_fields
+  var_samp: chatroom_message_var_samp_fields
+  variance: chatroom_message_variance_fields
+}
+
+"""
+order by aggregate values of table "chatroom_message"
+"""
+input chatroom_message_aggregate_order_by {
+  avg: chatroom_message_avg_order_by
+  count: order_by
+  max: chatroom_message_max_order_by
+  min: chatroom_message_min_order_by
+  stddev: chatroom_message_stddev_order_by
+  stddev_pop: chatroom_message_stddev_pop_order_by
+  stddev_samp: chatroom_message_stddev_samp_order_by
+  sum: chatroom_message_sum_order_by
+  var_pop: chatroom_message_var_pop_order_by
+  var_samp: chatroom_message_var_samp_order_by
+  variance: chatroom_message_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "chatroom_message"
+"""
+input chatroom_message_arr_rel_insert_input {
+  data: [chatroom_message_insert_input!]!
+
+  """upsert condition"""
+  on_conflict: chatroom_message_on_conflict
+}
+
+"""aggregate avg on columns"""
+type chatroom_message_avg_fields {
+  chatroomId: Float
+  id: Float
+}
+
+"""
+order by avg() on columns of table "chatroom_message"
+"""
+input chatroom_message_avg_order_by {
+  chatroomId: order_by
+  id: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "chatroom_message". All fields are combined with a logical 'AND'.
+"""
+input chatroom_message_bool_exp {
+  _and: [chatroom_message_bool_exp!]
+  _not: chatroom_message_bool_exp
+  _or: [chatroom_message_bool_exp!]
+  app_user: app_user_bool_exp
+  chatroom: chatroom_bool_exp
+  chatroomId: Int_comparison_exp
+  content: String_comparison_exp
+  createdAt: timestamp_comparison_exp
+  id: Int_comparison_exp
+  userId: String_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "chatroom_message"
+"""
+enum chatroom_message_constraint {
+  """unique or primary key constraint"""
+  chatroom_message_pkey
+}
+
+"""
+input type for incrementing numeric columns in table "chatroom_message"
+"""
+input chatroom_message_inc_input {
+  chatroomId: Int
+  id: Int
+}
+
+"""
+input type for inserting data into table "chatroom_message"
+"""
+input chatroom_message_insert_input {
+  app_user: app_user_obj_rel_insert_input
+  chatroom: chatroom_obj_rel_insert_input
+  chatroomId: Int
+  content: String
+  createdAt: timestamp
+  id: Int
+  userId: String
+}
+
+"""aggregate max on columns"""
+type chatroom_message_max_fields {
+  chatroomId: Int
+  content: String
+  createdAt: timestamp
+  id: Int
+  userId: String
+}
+
+"""
+order by max() on columns of table "chatroom_message"
+"""
+input chatroom_message_max_order_by {
+  chatroomId: order_by
+  content: order_by
+  createdAt: order_by
+  id: order_by
+  userId: order_by
+}
+
+"""aggregate min on columns"""
+type chatroom_message_min_fields {
+  chatroomId: Int
+  content: String
+  createdAt: timestamp
+  id: Int
+  userId: String
+}
+
+"""
+order by min() on columns of table "chatroom_message"
+"""
+input chatroom_message_min_order_by {
+  chatroomId: order_by
+  content: order_by
+  createdAt: order_by
+  id: order_by
+  userId: order_by
+}
+
+"""
+response of any mutation on the table "chatroom_message"
+"""
+type chatroom_message_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [chatroom_message!]!
+}
+
+"""
+on_conflict condition type for table "chatroom_message"
+"""
+input chatroom_message_on_conflict {
+  constraint: chatroom_message_constraint!
+  update_columns: [chatroom_message_update_column!]! = []
+  where: chatroom_message_bool_exp
+}
+
+"""Ordering options when selecting data from "chatroom_message"."""
+input chatroom_message_order_by {
+  app_user: app_user_order_by
+  chatroom: chatroom_order_by
+  chatroomId: order_by
+  content: order_by
+  createdAt: order_by
+  id: order_by
+  userId: order_by
+}
+
+"""primary key columns input for table: chatroom_message"""
+input chatroom_message_pk_columns_input {
+  id: Int!
+}
+
+"""
+select columns of table "chatroom_message"
+"""
+enum chatroom_message_select_column {
+  """column name"""
+  chatroomId
+
+  """column name"""
+  content
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  id
+
+  """column name"""
+  userId
+}
+
+"""
+input type for updating data in table "chatroom_message"
+"""
+input chatroom_message_set_input {
+  chatroomId: Int
+  content: String
+  createdAt: timestamp
+  id: Int
+  userId: String
+}
+
+"""aggregate stddev on columns"""
+type chatroom_message_stddev_fields {
+  chatroomId: Float
+  id: Float
+}
+
+"""
+order by stddev() on columns of table "chatroom_message"
+"""
+input chatroom_message_stddev_order_by {
+  chatroomId: order_by
+  id: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type chatroom_message_stddev_pop_fields {
+  chatroomId: Float
+  id: Float
+}
+
+"""
+order by stddev_pop() on columns of table "chatroom_message"
+"""
+input chatroom_message_stddev_pop_order_by {
+  chatroomId: order_by
+  id: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type chatroom_message_stddev_samp_fields {
+  chatroomId: Float
+  id: Float
+}
+
+"""
+order by stddev_samp() on columns of table "chatroom_message"
+"""
+input chatroom_message_stddev_samp_order_by {
+  chatroomId: order_by
+  id: order_by
+}
+
+"""aggregate sum on columns"""
+type chatroom_message_sum_fields {
+  chatroomId: Int
+  id: Int
+}
+
+"""
+order by sum() on columns of table "chatroom_message"
+"""
+input chatroom_message_sum_order_by {
+  chatroomId: order_by
+  id: order_by
+}
+
+"""
+update columns of table "chatroom_message"
+"""
+enum chatroom_message_update_column {
+  """column name"""
+  chatroomId
+
+  """column name"""
+  content
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  id
+
+  """column name"""
+  userId
+}
+
+"""aggregate var_pop on columns"""
+type chatroom_message_var_pop_fields {
+  chatroomId: Float
+  id: Float
+}
+
+"""
+order by var_pop() on columns of table "chatroom_message"
+"""
+input chatroom_message_var_pop_order_by {
+  chatroomId: order_by
+  id: order_by
+}
+
+"""aggregate var_samp on columns"""
+type chatroom_message_var_samp_fields {
+  chatroomId: Float
+  id: Float
+}
+
+"""
+order by var_samp() on columns of table "chatroom_message"
+"""
+input chatroom_message_var_samp_order_by {
+  chatroomId: order_by
+  id: order_by
+}
+
+"""aggregate variance on columns"""
+type chatroom_message_variance_fields {
+  chatroomId: Float
+  id: Float
+}
+
+"""
+order by variance() on columns of table "chatroom_message"
+"""
+input chatroom_message_variance_order_by {
+  chatroomId: order_by
+  id: order_by
+}
+
+"""aggregate min on columns"""
+type chatroom_min_fields {
+  UserId: String
+  createUserId: String
+  createdAt: timestamp
+  id: Int
+}
+
+"""
+order by min() on columns of table "chatroom"
+"""
+input chatroom_min_order_by {
+  UserId: order_by
+  createUserId: order_by
+  createdAt: order_by
+  id: order_by
+}
+
+"""
+response of any mutation on the table "chatroom"
+"""
+type chatroom_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [chatroom!]!
+}
+
+"""
+input type for inserting object relation for remote table "chatroom"
+"""
+input chatroom_obj_rel_insert_input {
+  data: chatroom_insert_input!
+
+  """upsert condition"""
+  on_conflict: chatroom_on_conflict
+}
+
+"""
+on_conflict condition type for table "chatroom"
+"""
+input chatroom_on_conflict {
+  constraint: chatroom_constraint!
+  update_columns: [chatroom_update_column!]! = []
+  where: chatroom_bool_exp
+}
+
+"""Ordering options when selecting data from "chatroom"."""
+input chatroom_order_by {
+  UserId: order_by
+  appUserByCreateuserid: app_user_order_by
+  app_user: app_user_order_by
+  chatroom_messages_aggregate: chatroom_message_aggregate_order_by
+  createUserId: order_by
+  createdAt: order_by
+  id: order_by
+}
+
+"""primary key columns input for table: chatroom"""
+input chatroom_pk_columns_input {
+  id: Int!
+}
+
+"""
+select columns of table "chatroom"
+"""
+enum chatroom_select_column {
+  """column name"""
+  UserId
+
+  """column name"""
+  createUserId
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  id
+}
+
+"""
+input type for updating data in table "chatroom"
+"""
+input chatroom_set_input {
+  UserId: String
+  createUserId: String
+  createdAt: timestamp
+  id: Int
+}
+
+"""aggregate stddev on columns"""
+type chatroom_stddev_fields {
+  id: Float
+}
+
+"""
+order by stddev() on columns of table "chatroom"
+"""
+input chatroom_stddev_order_by {
+  id: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type chatroom_stddev_pop_fields {
+  id: Float
+}
+
+"""
+order by stddev_pop() on columns of table "chatroom"
+"""
+input chatroom_stddev_pop_order_by {
+  id: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type chatroom_stddev_samp_fields {
+  id: Float
+}
+
+"""
+order by stddev_samp() on columns of table "chatroom"
+"""
+input chatroom_stddev_samp_order_by {
+  id: order_by
+}
+
+"""aggregate sum on columns"""
+type chatroom_sum_fields {
+  id: Int
+}
+
+"""
+order by sum() on columns of table "chatroom"
+"""
+input chatroom_sum_order_by {
+  id: order_by
+}
+
+"""
+update columns of table "chatroom"
+"""
+enum chatroom_update_column {
+  """column name"""
+  UserId
+
+  """column name"""
+  createUserId
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  id
+}
+
+"""aggregate var_pop on columns"""
+type chatroom_var_pop_fields {
+  id: Float
+}
+
+"""
+order by var_pop() on columns of table "chatroom"
+"""
+input chatroom_var_pop_order_by {
+  id: order_by
+}
+
+"""aggregate var_samp on columns"""
+type chatroom_var_samp_fields {
+  id: Float
+}
+
+"""
+order by var_samp() on columns of table "chatroom"
+"""
+input chatroom_var_samp_order_by {
+  id: order_by
+}
+
+"""aggregate variance on columns"""
+type chatroom_variance_fields {
+  id: Float
+}
+
+"""
+order by variance() on columns of table "chatroom"
+"""
+input chatroom_variance_order_by {
+  id: order_by
+}
+
 scalar citext
 
 """
@@ -1741,6 +3057,890 @@ input citext_comparison_exp {
 
   """does the column match the given SQL regular expression"""
   _similar: citext
+}
+
+"""
+columns and relationships of "clothing"
+"""
+type clothing {
+  """An object relationship"""
+  app_user: app_user
+  availability: String
+  brand: String
+
+  """An array relationship"""
+  clothing_statuses(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): [clothing_status!]!
+
+  """An aggregate relationship"""
+  clothing_statuses_aggregate(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): clothing_status_aggregate!
+  color: String
+  createdBy: String
+  id: Int!
+  image(
+    """JSON select path"""
+    path: String
+  ): jsonb
+  name: String
+
+  """An array relationship"""
+  ratings(
+    """distinct select on columns"""
+    distinct_on: [rating_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [rating_order_by!]
+
+    """filter the rows returned"""
+    where: rating_bool_exp
+  ): [rating!]!
+
+  """An aggregate relationship"""
+  ratings_aggregate(
+    """distinct select on columns"""
+    distinct_on: [rating_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [rating_order_by!]
+
+    """filter the rows returned"""
+    where: rating_bool_exp
+  ): rating_aggregate!
+  size: String
+  type: String
+  updatedAt: timestamp
+
+  """An array relationship"""
+  user_wardrobes(
+    """distinct select on columns"""
+    distinct_on: [user_wardrobe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wardrobe_order_by!]
+
+    """filter the rows returned"""
+    where: user_wardrobe_bool_exp
+  ): [user_wardrobe!]!
+
+  """An aggregate relationship"""
+  user_wardrobes_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_wardrobe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wardrobe_order_by!]
+
+    """filter the rows returned"""
+    where: user_wardrobe_bool_exp
+  ): user_wardrobe_aggregate!
+
+  """An array relationship"""
+  user_wishlists(
+    """distinct select on columns"""
+    distinct_on: [user_wishlist_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wishlist_order_by!]
+
+    """filter the rows returned"""
+    where: user_wishlist_bool_exp
+  ): [user_wishlist!]!
+
+  """An aggregate relationship"""
+  user_wishlists_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_wishlist_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wishlist_order_by!]
+
+    """filter the rows returned"""
+    where: user_wishlist_bool_exp
+  ): user_wishlist_aggregate!
+}
+
+"""
+aggregated selection of "clothing"
+"""
+type clothing_aggregate {
+  aggregate: clothing_aggregate_fields
+  nodes: [clothing!]!
+}
+
+"""
+aggregate fields of "clothing"
+"""
+type clothing_aggregate_fields {
+  avg: clothing_avg_fields
+  count(columns: [clothing_select_column!], distinct: Boolean): Int!
+  max: clothing_max_fields
+  min: clothing_min_fields
+  stddev: clothing_stddev_fields
+  stddev_pop: clothing_stddev_pop_fields
+  stddev_samp: clothing_stddev_samp_fields
+  sum: clothing_sum_fields
+  var_pop: clothing_var_pop_fields
+  var_samp: clothing_var_samp_fields
+  variance: clothing_variance_fields
+}
+
+"""
+order by aggregate values of table "clothing"
+"""
+input clothing_aggregate_order_by {
+  avg: clothing_avg_order_by
+  count: order_by
+  max: clothing_max_order_by
+  min: clothing_min_order_by
+  stddev: clothing_stddev_order_by
+  stddev_pop: clothing_stddev_pop_order_by
+  stddev_samp: clothing_stddev_samp_order_by
+  sum: clothing_sum_order_by
+  var_pop: clothing_var_pop_order_by
+  var_samp: clothing_var_samp_order_by
+  variance: clothing_variance_order_by
+}
+
+"""append existing jsonb value of filtered columns with new jsonb value"""
+input clothing_append_input {
+  image: jsonb
+}
+
+"""
+input type for inserting array relation for remote table "clothing"
+"""
+input clothing_arr_rel_insert_input {
+  data: [clothing_insert_input!]!
+
+  """upsert condition"""
+  on_conflict: clothing_on_conflict
+}
+
+"""aggregate avg on columns"""
+type clothing_avg_fields {
+  id: Float
+}
+
+"""
+order by avg() on columns of table "clothing"
+"""
+input clothing_avg_order_by {
+  id: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "clothing". All fields are combined with a logical 'AND'.
+"""
+input clothing_bool_exp {
+  _and: [clothing_bool_exp!]
+  _not: clothing_bool_exp
+  _or: [clothing_bool_exp!]
+  app_user: app_user_bool_exp
+  availability: String_comparison_exp
+  brand: String_comparison_exp
+  clothing_statuses: clothing_status_bool_exp
+  color: String_comparison_exp
+  createdBy: String_comparison_exp
+  id: Int_comparison_exp
+  image: jsonb_comparison_exp
+  name: String_comparison_exp
+  ratings: rating_bool_exp
+  size: String_comparison_exp
+  type: String_comparison_exp
+  updatedAt: timestamp_comparison_exp
+  user_wardrobes: user_wardrobe_bool_exp
+  user_wishlists: user_wishlist_bool_exp
+}
+
+"""
+unique or primary key constraints on table "clothing"
+"""
+enum clothing_constraint {
+  """unique or primary key constraint"""
+  clothing_pkey
+}
+
+"""
+delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+"""
+input clothing_delete_at_path_input {
+  image: [String!]
+}
+
+"""
+delete the array element with specified index (negative integers count from the end). throws an error if top level container is not an array
+"""
+input clothing_delete_elem_input {
+  image: Int
+}
+
+"""
+delete key/value pair or string element. key/value pairs are matched based on their key value
+"""
+input clothing_delete_key_input {
+  image: String
+}
+
+"""
+input type for incrementing numeric columns in table "clothing"
+"""
+input clothing_inc_input {
+  id: Int
+}
+
+"""
+input type for inserting data into table "clothing"
+"""
+input clothing_insert_input {
+  app_user: app_user_obj_rel_insert_input
+  availability: String
+  brand: String
+  clothing_statuses: clothing_status_arr_rel_insert_input
+  color: String
+  createdBy: String
+  id: Int
+  image: jsonb
+  name: String
+  ratings: rating_arr_rel_insert_input
+  size: String
+  type: String
+  updatedAt: timestamp
+  user_wardrobes: user_wardrobe_arr_rel_insert_input
+  user_wishlists: user_wishlist_arr_rel_insert_input
+}
+
+"""aggregate max on columns"""
+type clothing_max_fields {
+  availability: String
+  brand: String
+  color: String
+  createdBy: String
+  id: Int
+  name: String
+  size: String
+  type: String
+  updatedAt: timestamp
+}
+
+"""
+order by max() on columns of table "clothing"
+"""
+input clothing_max_order_by {
+  availability: order_by
+  brand: order_by
+  color: order_by
+  createdBy: order_by
+  id: order_by
+  name: order_by
+  size: order_by
+  type: order_by
+  updatedAt: order_by
+}
+
+"""aggregate min on columns"""
+type clothing_min_fields {
+  availability: String
+  brand: String
+  color: String
+  createdBy: String
+  id: Int
+  name: String
+  size: String
+  type: String
+  updatedAt: timestamp
+}
+
+"""
+order by min() on columns of table "clothing"
+"""
+input clothing_min_order_by {
+  availability: order_by
+  brand: order_by
+  color: order_by
+  createdBy: order_by
+  id: order_by
+  name: order_by
+  size: order_by
+  type: order_by
+  updatedAt: order_by
+}
+
+"""
+response of any mutation on the table "clothing"
+"""
+type clothing_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [clothing!]!
+}
+
+"""
+input type for inserting object relation for remote table "clothing"
+"""
+input clothing_obj_rel_insert_input {
+  data: clothing_insert_input!
+
+  """upsert condition"""
+  on_conflict: clothing_on_conflict
+}
+
+"""
+on_conflict condition type for table "clothing"
+"""
+input clothing_on_conflict {
+  constraint: clothing_constraint!
+  update_columns: [clothing_update_column!]! = []
+  where: clothing_bool_exp
+}
+
+"""Ordering options when selecting data from "clothing"."""
+input clothing_order_by {
+  app_user: app_user_order_by
+  availability: order_by
+  brand: order_by
+  clothing_statuses_aggregate: clothing_status_aggregate_order_by
+  color: order_by
+  createdBy: order_by
+  id: order_by
+  image: order_by
+  name: order_by
+  ratings_aggregate: rating_aggregate_order_by
+  size: order_by
+  type: order_by
+  updatedAt: order_by
+  user_wardrobes_aggregate: user_wardrobe_aggregate_order_by
+  user_wishlists_aggregate: user_wishlist_aggregate_order_by
+}
+
+"""primary key columns input for table: clothing"""
+input clothing_pk_columns_input {
+  id: Int!
+}
+
+"""prepend existing jsonb value of filtered columns with new jsonb value"""
+input clothing_prepend_input {
+  image: jsonb
+}
+
+"""
+select columns of table "clothing"
+"""
+enum clothing_select_column {
+  """column name"""
+  availability
+
+  """column name"""
+  brand
+
+  """column name"""
+  color
+
+  """column name"""
+  createdBy
+
+  """column name"""
+  id
+
+  """column name"""
+  image
+
+  """column name"""
+  name
+
+  """column name"""
+  size
+
+  """column name"""
+  type
+
+  """column name"""
+  updatedAt
+}
+
+"""
+input type for updating data in table "clothing"
+"""
+input clothing_set_input {
+  availability: String
+  brand: String
+  color: String
+  createdBy: String
+  id: Int
+  image: jsonb
+  name: String
+  size: String
+  type: String
+  updatedAt: timestamp
+}
+
+"""
+columns and relationships of "clothing_status"
+"""
+type clothing_status {
+  """An object relationship"""
+  appUserByOwnerid: app_user
+
+  """An object relationship"""
+  app_user: app_user
+  borrowedTo: String
+
+  """An object relationship"""
+  clothing: clothing
+  clothingId: Int
+  ownerId: String
+  status: String
+}
+
+"""
+aggregated selection of "clothing_status"
+"""
+type clothing_status_aggregate {
+  aggregate: clothing_status_aggregate_fields
+  nodes: [clothing_status!]!
+}
+
+"""
+aggregate fields of "clothing_status"
+"""
+type clothing_status_aggregate_fields {
+  avg: clothing_status_avg_fields
+  count(columns: [clothing_status_select_column!], distinct: Boolean): Int!
+  max: clothing_status_max_fields
+  min: clothing_status_min_fields
+  stddev: clothing_status_stddev_fields
+  stddev_pop: clothing_status_stddev_pop_fields
+  stddev_samp: clothing_status_stddev_samp_fields
+  sum: clothing_status_sum_fields
+  var_pop: clothing_status_var_pop_fields
+  var_samp: clothing_status_var_samp_fields
+  variance: clothing_status_variance_fields
+}
+
+"""
+order by aggregate values of table "clothing_status"
+"""
+input clothing_status_aggregate_order_by {
+  avg: clothing_status_avg_order_by
+  count: order_by
+  max: clothing_status_max_order_by
+  min: clothing_status_min_order_by
+  stddev: clothing_status_stddev_order_by
+  stddev_pop: clothing_status_stddev_pop_order_by
+  stddev_samp: clothing_status_stddev_samp_order_by
+  sum: clothing_status_sum_order_by
+  var_pop: clothing_status_var_pop_order_by
+  var_samp: clothing_status_var_samp_order_by
+  variance: clothing_status_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "clothing_status"
+"""
+input clothing_status_arr_rel_insert_input {
+  data: [clothing_status_insert_input!]!
+}
+
+"""aggregate avg on columns"""
+type clothing_status_avg_fields {
+  clothingId: Float
+}
+
+"""
+order by avg() on columns of table "clothing_status"
+"""
+input clothing_status_avg_order_by {
+  clothingId: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "clothing_status". All fields are combined with a logical 'AND'.
+"""
+input clothing_status_bool_exp {
+  _and: [clothing_status_bool_exp!]
+  _not: clothing_status_bool_exp
+  _or: [clothing_status_bool_exp!]
+  appUserByOwnerid: app_user_bool_exp
+  app_user: app_user_bool_exp
+  borrowedTo: String_comparison_exp
+  clothing: clothing_bool_exp
+  clothingId: Int_comparison_exp
+  ownerId: String_comparison_exp
+  status: String_comparison_exp
+}
+
+"""
+input type for incrementing numeric columns in table "clothing_status"
+"""
+input clothing_status_inc_input {
+  clothingId: Int
+}
+
+"""
+input type for inserting data into table "clothing_status"
+"""
+input clothing_status_insert_input {
+  appUserByOwnerid: app_user_obj_rel_insert_input
+  app_user: app_user_obj_rel_insert_input
+  borrowedTo: String
+  clothing: clothing_obj_rel_insert_input
+  clothingId: Int
+  ownerId: String
+  status: String
+}
+
+"""aggregate max on columns"""
+type clothing_status_max_fields {
+  borrowedTo: String
+  clothingId: Int
+  ownerId: String
+  status: String
+}
+
+"""
+order by max() on columns of table "clothing_status"
+"""
+input clothing_status_max_order_by {
+  borrowedTo: order_by
+  clothingId: order_by
+  ownerId: order_by
+  status: order_by
+}
+
+"""aggregate min on columns"""
+type clothing_status_min_fields {
+  borrowedTo: String
+  clothingId: Int
+  ownerId: String
+  status: String
+}
+
+"""
+order by min() on columns of table "clothing_status"
+"""
+input clothing_status_min_order_by {
+  borrowedTo: order_by
+  clothingId: order_by
+  ownerId: order_by
+  status: order_by
+}
+
+"""
+response of any mutation on the table "clothing_status"
+"""
+type clothing_status_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [clothing_status!]!
+}
+
+"""Ordering options when selecting data from "clothing_status"."""
+input clothing_status_order_by {
+  appUserByOwnerid: app_user_order_by
+  app_user: app_user_order_by
+  borrowedTo: order_by
+  clothing: clothing_order_by
+  clothingId: order_by
+  ownerId: order_by
+  status: order_by
+}
+
+"""
+select columns of table "clothing_status"
+"""
+enum clothing_status_select_column {
+  """column name"""
+  borrowedTo
+
+  """column name"""
+  clothingId
+
+  """column name"""
+  ownerId
+
+  """column name"""
+  status
+}
+
+"""
+input type for updating data in table "clothing_status"
+"""
+input clothing_status_set_input {
+  borrowedTo: String
+  clothingId: Int
+  ownerId: String
+  status: String
+}
+
+"""aggregate stddev on columns"""
+type clothing_status_stddev_fields {
+  clothingId: Float
+}
+
+"""
+order by stddev() on columns of table "clothing_status"
+"""
+input clothing_status_stddev_order_by {
+  clothingId: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type clothing_status_stddev_pop_fields {
+  clothingId: Float
+}
+
+"""
+order by stddev_pop() on columns of table "clothing_status"
+"""
+input clothing_status_stddev_pop_order_by {
+  clothingId: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type clothing_status_stddev_samp_fields {
+  clothingId: Float
+}
+
+"""
+order by stddev_samp() on columns of table "clothing_status"
+"""
+input clothing_status_stddev_samp_order_by {
+  clothingId: order_by
+}
+
+"""aggregate sum on columns"""
+type clothing_status_sum_fields {
+  clothingId: Int
+}
+
+"""
+order by sum() on columns of table "clothing_status"
+"""
+input clothing_status_sum_order_by {
+  clothingId: order_by
+}
+
+"""aggregate var_pop on columns"""
+type clothing_status_var_pop_fields {
+  clothingId: Float
+}
+
+"""
+order by var_pop() on columns of table "clothing_status"
+"""
+input clothing_status_var_pop_order_by {
+  clothingId: order_by
+}
+
+"""aggregate var_samp on columns"""
+type clothing_status_var_samp_fields {
+  clothingId: Float
+}
+
+"""
+order by var_samp() on columns of table "clothing_status"
+"""
+input clothing_status_var_samp_order_by {
+  clothingId: order_by
+}
+
+"""aggregate variance on columns"""
+type clothing_status_variance_fields {
+  clothingId: Float
+}
+
+"""
+order by variance() on columns of table "clothing_status"
+"""
+input clothing_status_variance_order_by {
+  clothingId: order_by
+}
+
+"""aggregate stddev on columns"""
+type clothing_stddev_fields {
+  id: Float
+}
+
+"""
+order by stddev() on columns of table "clothing"
+"""
+input clothing_stddev_order_by {
+  id: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type clothing_stddev_pop_fields {
+  id: Float
+}
+
+"""
+order by stddev_pop() on columns of table "clothing"
+"""
+input clothing_stddev_pop_order_by {
+  id: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type clothing_stddev_samp_fields {
+  id: Float
+}
+
+"""
+order by stddev_samp() on columns of table "clothing"
+"""
+input clothing_stddev_samp_order_by {
+  id: order_by
+}
+
+"""aggregate sum on columns"""
+type clothing_sum_fields {
+  id: Int
+}
+
+"""
+order by sum() on columns of table "clothing"
+"""
+input clothing_sum_order_by {
+  id: order_by
+}
+
+"""
+update columns of table "clothing"
+"""
+enum clothing_update_column {
+  """column name"""
+  availability
+
+  """column name"""
+  brand
+
+  """column name"""
+  color
+
+  """column name"""
+  createdBy
+
+  """column name"""
+  id
+
+  """column name"""
+  image
+
+  """column name"""
+  name
+
+  """column name"""
+  size
+
+  """column name"""
+  type
+
+  """column name"""
+  updatedAt
+}
+
+"""aggregate var_pop on columns"""
+type clothing_var_pop_fields {
+  id: Float
+}
+
+"""
+order by var_pop() on columns of table "clothing"
+"""
+input clothing_var_pop_order_by {
+  id: order_by
+}
+
+"""aggregate var_samp on columns"""
+type clothing_var_samp_fields {
+  id: Float
+}
+
+"""
+order by var_samp() on columns of table "clothing"
+"""
+input clothing_var_samp_order_by {
+  id: order_by
+}
+
+"""aggregate variance on columns"""
+type clothing_variance_fields {
+  id: Float
+}
+
+"""
+order by variance() on columns of table "clothing"
+"""
+input clothing_variance_order_by {
+  id: order_by
 }
 
 """
@@ -2143,6 +4343,632 @@ input files_variance_order_by {
   size: order_by
 }
 
+"""
+columns and relationships of "group"
+"""
+type group {
+  """An object relationship"""
+  app_user: app_user
+  creatorId: String
+
+  """An array relationship"""
+  group_members(
+    """distinct select on columns"""
+    distinct_on: [group_member_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_member_order_by!]
+
+    """filter the rows returned"""
+    where: group_member_bool_exp
+  ): [group_member!]!
+
+  """An aggregate relationship"""
+  group_members_aggregate(
+    """distinct select on columns"""
+    distinct_on: [group_member_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_member_order_by!]
+
+    """filter the rows returned"""
+    where: group_member_bool_exp
+  ): group_member_aggregate!
+  id: Int!
+  name: String
+}
+
+"""
+aggregated selection of "group"
+"""
+type group_aggregate {
+  aggregate: group_aggregate_fields
+  nodes: [group!]!
+}
+
+"""
+aggregate fields of "group"
+"""
+type group_aggregate_fields {
+  avg: group_avg_fields
+  count(columns: [group_select_column!], distinct: Boolean): Int!
+  max: group_max_fields
+  min: group_min_fields
+  stddev: group_stddev_fields
+  stddev_pop: group_stddev_pop_fields
+  stddev_samp: group_stddev_samp_fields
+  sum: group_sum_fields
+  var_pop: group_var_pop_fields
+  var_samp: group_var_samp_fields
+  variance: group_variance_fields
+}
+
+"""
+order by aggregate values of table "group"
+"""
+input group_aggregate_order_by {
+  avg: group_avg_order_by
+  count: order_by
+  max: group_max_order_by
+  min: group_min_order_by
+  stddev: group_stddev_order_by
+  stddev_pop: group_stddev_pop_order_by
+  stddev_samp: group_stddev_samp_order_by
+  sum: group_sum_order_by
+  var_pop: group_var_pop_order_by
+  var_samp: group_var_samp_order_by
+  variance: group_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "group"
+"""
+input group_arr_rel_insert_input {
+  data: [group_insert_input!]!
+
+  """upsert condition"""
+  on_conflict: group_on_conflict
+}
+
+"""aggregate avg on columns"""
+type group_avg_fields {
+  id: Float
+}
+
+"""
+order by avg() on columns of table "group"
+"""
+input group_avg_order_by {
+  id: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "group". All fields are combined with a logical 'AND'.
+"""
+input group_bool_exp {
+  _and: [group_bool_exp!]
+  _not: group_bool_exp
+  _or: [group_bool_exp!]
+  app_user: app_user_bool_exp
+  creatorId: String_comparison_exp
+  group_members: group_member_bool_exp
+  id: Int_comparison_exp
+  name: String_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "group"
+"""
+enum group_constraint {
+  """unique or primary key constraint"""
+  group_pkey
+}
+
+"""
+input type for incrementing numeric columns in table "group"
+"""
+input group_inc_input {
+  id: Int
+}
+
+"""
+input type for inserting data into table "group"
+"""
+input group_insert_input {
+  app_user: app_user_obj_rel_insert_input
+  creatorId: String
+  group_members: group_member_arr_rel_insert_input
+  id: Int
+  name: String
+}
+
+"""aggregate max on columns"""
+type group_max_fields {
+  creatorId: String
+  id: Int
+  name: String
+}
+
+"""
+order by max() on columns of table "group"
+"""
+input group_max_order_by {
+  creatorId: order_by
+  id: order_by
+  name: order_by
+}
+
+"""
+columns and relationships of "group_member"
+"""
+type group_member {
+  """An object relationship"""
+  app_user: app_user
+
+  """An object relationship"""
+  group: group
+  groupId: Int
+  memberId: String
+  role: String
+  updatedAt: timestamp
+}
+
+"""
+aggregated selection of "group_member"
+"""
+type group_member_aggregate {
+  aggregate: group_member_aggregate_fields
+  nodes: [group_member!]!
+}
+
+"""
+aggregate fields of "group_member"
+"""
+type group_member_aggregate_fields {
+  avg: group_member_avg_fields
+  count(columns: [group_member_select_column!], distinct: Boolean): Int!
+  max: group_member_max_fields
+  min: group_member_min_fields
+  stddev: group_member_stddev_fields
+  stddev_pop: group_member_stddev_pop_fields
+  stddev_samp: group_member_stddev_samp_fields
+  sum: group_member_sum_fields
+  var_pop: group_member_var_pop_fields
+  var_samp: group_member_var_samp_fields
+  variance: group_member_variance_fields
+}
+
+"""
+order by aggregate values of table "group_member"
+"""
+input group_member_aggregate_order_by {
+  avg: group_member_avg_order_by
+  count: order_by
+  max: group_member_max_order_by
+  min: group_member_min_order_by
+  stddev: group_member_stddev_order_by
+  stddev_pop: group_member_stddev_pop_order_by
+  stddev_samp: group_member_stddev_samp_order_by
+  sum: group_member_sum_order_by
+  var_pop: group_member_var_pop_order_by
+  var_samp: group_member_var_samp_order_by
+  variance: group_member_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "group_member"
+"""
+input group_member_arr_rel_insert_input {
+  data: [group_member_insert_input!]!
+}
+
+"""aggregate avg on columns"""
+type group_member_avg_fields {
+  groupId: Float
+}
+
+"""
+order by avg() on columns of table "group_member"
+"""
+input group_member_avg_order_by {
+  groupId: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "group_member". All fields are combined with a logical 'AND'.
+"""
+input group_member_bool_exp {
+  _and: [group_member_bool_exp!]
+  _not: group_member_bool_exp
+  _or: [group_member_bool_exp!]
+  app_user: app_user_bool_exp
+  group: group_bool_exp
+  groupId: Int_comparison_exp
+  memberId: String_comparison_exp
+  role: String_comparison_exp
+  updatedAt: timestamp_comparison_exp
+}
+
+"""
+input type for incrementing numeric columns in table "group_member"
+"""
+input group_member_inc_input {
+  groupId: Int
+}
+
+"""
+input type for inserting data into table "group_member"
+"""
+input group_member_insert_input {
+  app_user: app_user_obj_rel_insert_input
+  group: group_obj_rel_insert_input
+  groupId: Int
+  memberId: String
+  role: String
+  updatedAt: timestamp
+}
+
+"""aggregate max on columns"""
+type group_member_max_fields {
+  groupId: Int
+  memberId: String
+  role: String
+  updatedAt: timestamp
+}
+
+"""
+order by max() on columns of table "group_member"
+"""
+input group_member_max_order_by {
+  groupId: order_by
+  memberId: order_by
+  role: order_by
+  updatedAt: order_by
+}
+
+"""aggregate min on columns"""
+type group_member_min_fields {
+  groupId: Int
+  memberId: String
+  role: String
+  updatedAt: timestamp
+}
+
+"""
+order by min() on columns of table "group_member"
+"""
+input group_member_min_order_by {
+  groupId: order_by
+  memberId: order_by
+  role: order_by
+  updatedAt: order_by
+}
+
+"""
+response of any mutation on the table "group_member"
+"""
+type group_member_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [group_member!]!
+}
+
+"""Ordering options when selecting data from "group_member"."""
+input group_member_order_by {
+  app_user: app_user_order_by
+  group: group_order_by
+  groupId: order_by
+  memberId: order_by
+  role: order_by
+  updatedAt: order_by
+}
+
+"""
+select columns of table "group_member"
+"""
+enum group_member_select_column {
+  """column name"""
+  groupId
+
+  """column name"""
+  memberId
+
+  """column name"""
+  role
+
+  """column name"""
+  updatedAt
+}
+
+"""
+input type for updating data in table "group_member"
+"""
+input group_member_set_input {
+  groupId: Int
+  memberId: String
+  role: String
+  updatedAt: timestamp
+}
+
+"""aggregate stddev on columns"""
+type group_member_stddev_fields {
+  groupId: Float
+}
+
+"""
+order by stddev() on columns of table "group_member"
+"""
+input group_member_stddev_order_by {
+  groupId: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type group_member_stddev_pop_fields {
+  groupId: Float
+}
+
+"""
+order by stddev_pop() on columns of table "group_member"
+"""
+input group_member_stddev_pop_order_by {
+  groupId: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type group_member_stddev_samp_fields {
+  groupId: Float
+}
+
+"""
+order by stddev_samp() on columns of table "group_member"
+"""
+input group_member_stddev_samp_order_by {
+  groupId: order_by
+}
+
+"""aggregate sum on columns"""
+type group_member_sum_fields {
+  groupId: Int
+}
+
+"""
+order by sum() on columns of table "group_member"
+"""
+input group_member_sum_order_by {
+  groupId: order_by
+}
+
+"""aggregate var_pop on columns"""
+type group_member_var_pop_fields {
+  groupId: Float
+}
+
+"""
+order by var_pop() on columns of table "group_member"
+"""
+input group_member_var_pop_order_by {
+  groupId: order_by
+}
+
+"""aggregate var_samp on columns"""
+type group_member_var_samp_fields {
+  groupId: Float
+}
+
+"""
+order by var_samp() on columns of table "group_member"
+"""
+input group_member_var_samp_order_by {
+  groupId: order_by
+}
+
+"""aggregate variance on columns"""
+type group_member_variance_fields {
+  groupId: Float
+}
+
+"""
+order by variance() on columns of table "group_member"
+"""
+input group_member_variance_order_by {
+  groupId: order_by
+}
+
+"""aggregate min on columns"""
+type group_min_fields {
+  creatorId: String
+  id: Int
+  name: String
+}
+
+"""
+order by min() on columns of table "group"
+"""
+input group_min_order_by {
+  creatorId: order_by
+  id: order_by
+  name: order_by
+}
+
+"""
+response of any mutation on the table "group"
+"""
+type group_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [group!]!
+}
+
+"""
+input type for inserting object relation for remote table "group"
+"""
+input group_obj_rel_insert_input {
+  data: group_insert_input!
+
+  """upsert condition"""
+  on_conflict: group_on_conflict
+}
+
+"""
+on_conflict condition type for table "group"
+"""
+input group_on_conflict {
+  constraint: group_constraint!
+  update_columns: [group_update_column!]! = []
+  where: group_bool_exp
+}
+
+"""Ordering options when selecting data from "group"."""
+input group_order_by {
+  app_user: app_user_order_by
+  creatorId: order_by
+  group_members_aggregate: group_member_aggregate_order_by
+  id: order_by
+  name: order_by
+}
+
+"""primary key columns input for table: group"""
+input group_pk_columns_input {
+  id: Int!
+}
+
+"""
+select columns of table "group"
+"""
+enum group_select_column {
+  """column name"""
+  creatorId
+
+  """column name"""
+  id
+
+  """column name"""
+  name
+}
+
+"""
+input type for updating data in table "group"
+"""
+input group_set_input {
+  creatorId: String
+  id: Int
+  name: String
+}
+
+"""aggregate stddev on columns"""
+type group_stddev_fields {
+  id: Float
+}
+
+"""
+order by stddev() on columns of table "group"
+"""
+input group_stddev_order_by {
+  id: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type group_stddev_pop_fields {
+  id: Float
+}
+
+"""
+order by stddev_pop() on columns of table "group"
+"""
+input group_stddev_pop_order_by {
+  id: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type group_stddev_samp_fields {
+  id: Float
+}
+
+"""
+order by stddev_samp() on columns of table "group"
+"""
+input group_stddev_samp_order_by {
+  id: order_by
+}
+
+"""aggregate sum on columns"""
+type group_sum_fields {
+  id: Int
+}
+
+"""
+order by sum() on columns of table "group"
+"""
+input group_sum_order_by {
+  id: order_by
+}
+
+"""
+update columns of table "group"
+"""
+enum group_update_column {
+  """column name"""
+  creatorId
+
+  """column name"""
+  id
+
+  """column name"""
+  name
+}
+
+"""aggregate var_pop on columns"""
+type group_var_pop_fields {
+  id: Float
+}
+
+"""
+order by var_pop() on columns of table "group"
+"""
+input group_var_pop_order_by {
+  id: order_by
+}
+
+"""aggregate var_samp on columns"""
+type group_var_samp_fields {
+  id: Float
+}
+
+"""
+order by var_samp() on columns of table "group"
+"""
+input group_var_samp_order_by {
+  id: order_by
+}
+
+"""aggregate variance on columns"""
+type group_variance_fields {
+  id: Float
+}
+
+"""
+order by variance() on columns of table "group"
+"""
+input group_variance_order_by {
+  id: order_by
+}
+
 scalar jsonb
 
 """
@@ -2305,6 +5131,114 @@ type mutation_root {
   delete single row from the table: "app_user"
   """
   delete_app_user_by_pk(id: String!): app_user
+
+  """
+  delete data from the table: "chatroom"
+  """
+  delete_chatroom(
+    """filter the rows which have to be deleted"""
+    where: chatroom_bool_exp!
+  ): chatroom_mutation_response
+
+  """
+  delete single row from the table: "chatroom"
+  """
+  delete_chatroom_by_pk(id: Int!): chatroom
+
+  """
+  delete data from the table: "chatroom_message"
+  """
+  delete_chatroom_message(
+    """filter the rows which have to be deleted"""
+    where: chatroom_message_bool_exp!
+  ): chatroom_message_mutation_response
+
+  """
+  delete single row from the table: "chatroom_message"
+  """
+  delete_chatroom_message_by_pk(id: Int!): chatroom_message
+
+  """
+  delete data from the table: "clothing"
+  """
+  delete_clothing(
+    """filter the rows which have to be deleted"""
+    where: clothing_bool_exp!
+  ): clothing_mutation_response
+
+  """
+  delete single row from the table: "clothing"
+  """
+  delete_clothing_by_pk(id: Int!): clothing
+
+  """
+  delete data from the table: "clothing_status"
+  """
+  delete_clothing_status(
+    """filter the rows which have to be deleted"""
+    where: clothing_status_bool_exp!
+  ): clothing_status_mutation_response
+
+  """
+  delete data from the table: "group"
+  """
+  delete_group(
+    """filter the rows which have to be deleted"""
+    where: group_bool_exp!
+  ): group_mutation_response
+
+  """
+  delete single row from the table: "group"
+  """
+  delete_group_by_pk(id: Int!): group
+
+  """
+  delete data from the table: "group_member"
+  """
+  delete_group_member(
+    """filter the rows which have to be deleted"""
+    where: group_member_bool_exp!
+  ): group_member_mutation_response
+
+  """
+  delete data from the table: "rating"
+  """
+  delete_rating(
+    """filter the rows which have to be deleted"""
+    where: rating_bool_exp!
+  ): rating_mutation_response
+
+  """
+  delete data from the table: "user_avatar"
+  """
+  delete_user_avatar(
+    """filter the rows which have to be deleted"""
+    where: user_avatar_bool_exp!
+  ): user_avatar_mutation_response
+
+  """
+  delete data from the table: "user_following"
+  """
+  delete_user_following(
+    """filter the rows which have to be deleted"""
+    where: user_following_bool_exp!
+  ): user_following_mutation_response
+
+  """
+  delete data from the table: "user_wardrobe"
+  """
+  delete_user_wardrobe(
+    """filter the rows which have to be deleted"""
+    where: user_wardrobe_bool_exp!
+  ): user_wardrobe_mutation_response
+
+  """
+  delete data from the table: "user_wishlist"
+  """
+  delete_user_wishlist(
+    """filter the rows which have to be deleted"""
+    where: user_wishlist_bool_exp!
+  ): user_wishlist_mutation_response
 
   """
   insert a single row into the table: "auth.providers"
@@ -2525,6 +5459,206 @@ type mutation_root {
     """upsert condition"""
     on_conflict: app_user_on_conflict
   ): app_user
+
+  """
+  insert data into the table: "chatroom"
+  """
+  insert_chatroom(
+    """the rows to be inserted"""
+    objects: [chatroom_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: chatroom_on_conflict
+  ): chatroom_mutation_response
+
+  """
+  insert data into the table: "chatroom_message"
+  """
+  insert_chatroom_message(
+    """the rows to be inserted"""
+    objects: [chatroom_message_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: chatroom_message_on_conflict
+  ): chatroom_message_mutation_response
+
+  """
+  insert a single row into the table: "chatroom_message"
+  """
+  insert_chatroom_message_one(
+    """the row to be inserted"""
+    object: chatroom_message_insert_input!
+
+    """upsert condition"""
+    on_conflict: chatroom_message_on_conflict
+  ): chatroom_message
+
+  """
+  insert a single row into the table: "chatroom"
+  """
+  insert_chatroom_one(
+    """the row to be inserted"""
+    object: chatroom_insert_input!
+
+    """upsert condition"""
+    on_conflict: chatroom_on_conflict
+  ): chatroom
+
+  """
+  insert data into the table: "clothing"
+  """
+  insert_clothing(
+    """the rows to be inserted"""
+    objects: [clothing_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: clothing_on_conflict
+  ): clothing_mutation_response
+
+  """
+  insert a single row into the table: "clothing"
+  """
+  insert_clothing_one(
+    """the row to be inserted"""
+    object: clothing_insert_input!
+
+    """upsert condition"""
+    on_conflict: clothing_on_conflict
+  ): clothing
+
+  """
+  insert data into the table: "clothing_status"
+  """
+  insert_clothing_status(
+    """the rows to be inserted"""
+    objects: [clothing_status_insert_input!]!
+  ): clothing_status_mutation_response
+
+  """
+  insert a single row into the table: "clothing_status"
+  """
+  insert_clothing_status_one(
+    """the row to be inserted"""
+    object: clothing_status_insert_input!
+  ): clothing_status
+
+  """
+  insert data into the table: "group"
+  """
+  insert_group(
+    """the rows to be inserted"""
+    objects: [group_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: group_on_conflict
+  ): group_mutation_response
+
+  """
+  insert data into the table: "group_member"
+  """
+  insert_group_member(
+    """the rows to be inserted"""
+    objects: [group_member_insert_input!]!
+  ): group_member_mutation_response
+
+  """
+  insert a single row into the table: "group_member"
+  """
+  insert_group_member_one(
+    """the row to be inserted"""
+    object: group_member_insert_input!
+  ): group_member
+
+  """
+  insert a single row into the table: "group"
+  """
+  insert_group_one(
+    """the row to be inserted"""
+    object: group_insert_input!
+
+    """upsert condition"""
+    on_conflict: group_on_conflict
+  ): group
+
+  """
+  insert data into the table: "rating"
+  """
+  insert_rating(
+    """the rows to be inserted"""
+    objects: [rating_insert_input!]!
+  ): rating_mutation_response
+
+  """
+  insert a single row into the table: "rating"
+  """
+  insert_rating_one(
+    """the row to be inserted"""
+    object: rating_insert_input!
+  ): rating
+
+  """
+  insert data into the table: "user_avatar"
+  """
+  insert_user_avatar(
+    """the rows to be inserted"""
+    objects: [user_avatar_insert_input!]!
+  ): user_avatar_mutation_response
+
+  """
+  insert a single row into the table: "user_avatar"
+  """
+  insert_user_avatar_one(
+    """the row to be inserted"""
+    object: user_avatar_insert_input!
+  ): user_avatar
+
+  """
+  insert data into the table: "user_following"
+  """
+  insert_user_following(
+    """the rows to be inserted"""
+    objects: [user_following_insert_input!]!
+  ): user_following_mutation_response
+
+  """
+  insert a single row into the table: "user_following"
+  """
+  insert_user_following_one(
+    """the row to be inserted"""
+    object: user_following_insert_input!
+  ): user_following
+
+  """
+  insert data into the table: "user_wardrobe"
+  """
+  insert_user_wardrobe(
+    """the rows to be inserted"""
+    objects: [user_wardrobe_insert_input!]!
+  ): user_wardrobe_mutation_response
+
+  """
+  insert a single row into the table: "user_wardrobe"
+  """
+  insert_user_wardrobe_one(
+    """the row to be inserted"""
+    object: user_wardrobe_insert_input!
+  ): user_wardrobe
+
+  """
+  insert data into the table: "user_wishlist"
+  """
+  insert_user_wishlist(
+    """the rows to be inserted"""
+    objects: [user_wishlist_insert_input!]!
+  ): user_wishlist_mutation_response
+
+  """
+  insert a single row into the table: "user_wishlist"
+  """
+  insert_user_wishlist_one(
+    """the row to be inserted"""
+    object: user_wishlist_insert_input!
+  ): user_wishlist
 
   """
   update single row of the table: "auth.providers"
@@ -2779,6 +5913,265 @@ type mutation_root {
     _set: app_user_set_input
     pk_columns: app_user_pk_columns_input!
   ): app_user
+
+  """
+  update data of the table: "chatroom"
+  """
+  update_chatroom(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: chatroom_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: chatroom_set_input
+
+    """filter the rows which have to be updated"""
+    where: chatroom_bool_exp!
+  ): chatroom_mutation_response
+
+  """
+  update single row of the table: "chatroom"
+  """
+  update_chatroom_by_pk(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: chatroom_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: chatroom_set_input
+    pk_columns: chatroom_pk_columns_input!
+  ): chatroom
+
+  """
+  update data of the table: "chatroom_message"
+  """
+  update_chatroom_message(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: chatroom_message_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: chatroom_message_set_input
+
+    """filter the rows which have to be updated"""
+    where: chatroom_message_bool_exp!
+  ): chatroom_message_mutation_response
+
+  """
+  update single row of the table: "chatroom_message"
+  """
+  update_chatroom_message_by_pk(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: chatroom_message_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: chatroom_message_set_input
+    pk_columns: chatroom_message_pk_columns_input!
+  ): chatroom_message
+
+  """
+  update data of the table: "clothing"
+  """
+  update_clothing(
+    """append existing jsonb value of filtered columns with new jsonb value"""
+    _append: clothing_append_input
+
+    """
+    delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+    """
+    _delete_at_path: clothing_delete_at_path_input
+
+    """
+    delete the array element with specified index (negative integers count from the end). throws an error if top level container is not an array
+    """
+    _delete_elem: clothing_delete_elem_input
+
+    """
+    delete key/value pair or string element. key/value pairs are matched based on their key value
+    """
+    _delete_key: clothing_delete_key_input
+
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: clothing_inc_input
+
+    """prepend existing jsonb value of filtered columns with new jsonb value"""
+    _prepend: clothing_prepend_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: clothing_set_input
+
+    """filter the rows which have to be updated"""
+    where: clothing_bool_exp!
+  ): clothing_mutation_response
+
+  """
+  update single row of the table: "clothing"
+  """
+  update_clothing_by_pk(
+    """append existing jsonb value of filtered columns with new jsonb value"""
+    _append: clothing_append_input
+
+    """
+    delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+    """
+    _delete_at_path: clothing_delete_at_path_input
+
+    """
+    delete the array element with specified index (negative integers count from the end). throws an error if top level container is not an array
+    """
+    _delete_elem: clothing_delete_elem_input
+
+    """
+    delete key/value pair or string element. key/value pairs are matched based on their key value
+    """
+    _delete_key: clothing_delete_key_input
+
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: clothing_inc_input
+
+    """prepend existing jsonb value of filtered columns with new jsonb value"""
+    _prepend: clothing_prepend_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: clothing_set_input
+    pk_columns: clothing_pk_columns_input!
+  ): clothing
+
+  """
+  update data of the table: "clothing_status"
+  """
+  update_clothing_status(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: clothing_status_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: clothing_status_set_input
+
+    """filter the rows which have to be updated"""
+    where: clothing_status_bool_exp!
+  ): clothing_status_mutation_response
+
+  """
+  update data of the table: "group"
+  """
+  update_group(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: group_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: group_set_input
+
+    """filter the rows which have to be updated"""
+    where: group_bool_exp!
+  ): group_mutation_response
+
+  """
+  update single row of the table: "group"
+  """
+  update_group_by_pk(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: group_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: group_set_input
+    pk_columns: group_pk_columns_input!
+  ): group
+
+  """
+  update data of the table: "group_member"
+  """
+  update_group_member(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: group_member_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: group_member_set_input
+
+    """filter the rows which have to be updated"""
+    where: group_member_bool_exp!
+  ): group_member_mutation_response
+
+  """
+  update data of the table: "rating"
+  """
+  update_rating(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: rating_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: rating_set_input
+
+    """filter the rows which have to be updated"""
+    where: rating_bool_exp!
+  ): rating_mutation_response
+
+  """
+  update data of the table: "user_avatar"
+  """
+  update_user_avatar(
+    """append existing jsonb value of filtered columns with new jsonb value"""
+    _append: user_avatar_append_input
+
+    """
+    delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+    """
+    _delete_at_path: user_avatar_delete_at_path_input
+
+    """
+    delete the array element with specified index (negative integers count from the end). throws an error if top level container is not an array
+    """
+    _delete_elem: user_avatar_delete_elem_input
+
+    """
+    delete key/value pair or string element. key/value pairs are matched based on their key value
+    """
+    _delete_key: user_avatar_delete_key_input
+
+    """prepend existing jsonb value of filtered columns with new jsonb value"""
+    _prepend: user_avatar_prepend_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: user_avatar_set_input
+
+    """filter the rows which have to be updated"""
+    where: user_avatar_bool_exp!
+  ): user_avatar_mutation_response
+
+  """
+  update data of the table: "user_following"
+  """
+  update_user_following(
+    """sets the columns of the filtered rows to the given values"""
+    _set: user_following_set_input
+
+    """filter the rows which have to be updated"""
+    where: user_following_bool_exp!
+  ): user_following_mutation_response
+
+  """
+  update data of the table: "user_wardrobe"
+  """
+  update_user_wardrobe(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: user_wardrobe_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: user_wardrobe_set_input
+
+    """filter the rows which have to be updated"""
+    where: user_wardrobe_bool_exp!
+  ): user_wardrobe_mutation_response
+
+  """
+  update data of the table: "user_wishlist"
+  """
+  update_user_wishlist(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: user_wishlist_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: user_wishlist_set_input
+
+    """filter the rows which have to be updated"""
+    where: user_wishlist_bool_exp!
+  ): user_wishlist_mutation_response
 }
 
 """column ordering options"""
@@ -3153,6 +6546,177 @@ type query_root {
     where: buckets_bool_exp
   ): buckets_aggregate!
 
+  """
+  fetch data from the table: "chatroom"
+  """
+  chatroom(
+    """distinct select on columns"""
+    distinct_on: [chatroom_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_bool_exp
+  ): [chatroom!]!
+
+  """
+  fetch aggregated fields from the table: "chatroom"
+  """
+  chatroom_aggregate(
+    """distinct select on columns"""
+    distinct_on: [chatroom_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_bool_exp
+  ): chatroom_aggregate!
+
+  """fetch data from the table: "chatroom" using primary key columns"""
+  chatroom_by_pk(id: Int!): chatroom
+
+  """
+  fetch data from the table: "chatroom_message"
+  """
+  chatroom_message(
+    """distinct select on columns"""
+    distinct_on: [chatroom_message_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_message_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_message_bool_exp
+  ): [chatroom_message!]!
+
+  """
+  fetch aggregated fields from the table: "chatroom_message"
+  """
+  chatroom_message_aggregate(
+    """distinct select on columns"""
+    distinct_on: [chatroom_message_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_message_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_message_bool_exp
+  ): chatroom_message_aggregate!
+
+  """
+  fetch data from the table: "chatroom_message" using primary key columns
+  """
+  chatroom_message_by_pk(id: Int!): chatroom_message
+
+  """
+  fetch data from the table: "clothing"
+  """
+  clothing(
+    """distinct select on columns"""
+    distinct_on: [clothing_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_bool_exp
+  ): [clothing!]!
+
+  """
+  fetch aggregated fields from the table: "clothing"
+  """
+  clothing_aggregate(
+    """distinct select on columns"""
+    distinct_on: [clothing_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_bool_exp
+  ): clothing_aggregate!
+
+  """fetch data from the table: "clothing" using primary key columns"""
+  clothing_by_pk(id: Int!): clothing
+
+  """
+  fetch data from the table: "clothing_status"
+  """
+  clothing_status(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): [clothing_status!]!
+
+  """
+  fetch aggregated fields from the table: "clothing_status"
+  """
+  clothing_status_aggregate(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): clothing_status_aggregate!
+
   """fetch data from the table: "storage.files" using primary key columns"""
   file(id: uuid!): files
 
@@ -3196,6 +6760,129 @@ type query_root {
     where: files_bool_exp
   ): files_aggregate!
 
+  """
+  fetch data from the table: "group"
+  """
+  group(
+    """distinct select on columns"""
+    distinct_on: [group_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_order_by!]
+
+    """filter the rows returned"""
+    where: group_bool_exp
+  ): [group!]!
+
+  """
+  fetch aggregated fields from the table: "group"
+  """
+  group_aggregate(
+    """distinct select on columns"""
+    distinct_on: [group_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_order_by!]
+
+    """filter the rows returned"""
+    where: group_bool_exp
+  ): group_aggregate!
+
+  """fetch data from the table: "group" using primary key columns"""
+  group_by_pk(id: Int!): group
+
+  """
+  fetch data from the table: "group_member"
+  """
+  group_member(
+    """distinct select on columns"""
+    distinct_on: [group_member_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_member_order_by!]
+
+    """filter the rows returned"""
+    where: group_member_bool_exp
+  ): [group_member!]!
+
+  """
+  fetch aggregated fields from the table: "group_member"
+  """
+  group_member_aggregate(
+    """distinct select on columns"""
+    distinct_on: [group_member_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_member_order_by!]
+
+    """filter the rows returned"""
+    where: group_member_bool_exp
+  ): group_member_aggregate!
+
+  """
+  fetch data from the table: "rating"
+  """
+  rating(
+    """distinct select on columns"""
+    distinct_on: [rating_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [rating_order_by!]
+
+    """filter the rows returned"""
+    where: rating_bool_exp
+  ): [rating!]!
+
+  """
+  fetch aggregated fields from the table: "rating"
+  """
+  rating_aggregate(
+    """distinct select on columns"""
+    distinct_on: [rating_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [rating_order_by!]
+
+    """filter the rows returned"""
+    where: rating_bool_exp
+  ): rating_aggregate!
+
   """fetch data from the table: "auth.users" using primary key columns"""
   user(id: uuid!): users
 
@@ -3220,6 +6907,166 @@ type query_root {
   ): users_aggregate!
 
   """
+  fetch data from the table: "user_avatar"
+  """
+  user_avatar(
+    """distinct select on columns"""
+    distinct_on: [user_avatar_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_avatar_order_by!]
+
+    """filter the rows returned"""
+    where: user_avatar_bool_exp
+  ): [user_avatar!]!
+
+  """
+  fetch aggregated fields from the table: "user_avatar"
+  """
+  user_avatar_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_avatar_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_avatar_order_by!]
+
+    """filter the rows returned"""
+    where: user_avatar_bool_exp
+  ): user_avatar_aggregate!
+
+  """
+  fetch data from the table: "user_following"
+  """
+  user_following(
+    """distinct select on columns"""
+    distinct_on: [user_following_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_following_order_by!]
+
+    """filter the rows returned"""
+    where: user_following_bool_exp
+  ): [user_following!]!
+
+  """
+  fetch aggregated fields from the table: "user_following"
+  """
+  user_following_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_following_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_following_order_by!]
+
+    """filter the rows returned"""
+    where: user_following_bool_exp
+  ): user_following_aggregate!
+
+  """
+  fetch data from the table: "user_wardrobe"
+  """
+  user_wardrobe(
+    """distinct select on columns"""
+    distinct_on: [user_wardrobe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wardrobe_order_by!]
+
+    """filter the rows returned"""
+    where: user_wardrobe_bool_exp
+  ): [user_wardrobe!]!
+
+  """
+  fetch aggregated fields from the table: "user_wardrobe"
+  """
+  user_wardrobe_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_wardrobe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wardrobe_order_by!]
+
+    """filter the rows returned"""
+    where: user_wardrobe_bool_exp
+  ): user_wardrobe_aggregate!
+
+  """
+  fetch data from the table: "user_wishlist"
+  """
+  user_wishlist(
+    """distinct select on columns"""
+    distinct_on: [user_wishlist_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wishlist_order_by!]
+
+    """filter the rows returned"""
+    where: user_wishlist_bool_exp
+  ): [user_wishlist!]!
+
+  """
+  fetch aggregated fields from the table: "user_wishlist"
+  """
+  user_wishlist_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_wishlist_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wishlist_order_by!]
+
+    """filter the rows returned"""
+    where: user_wishlist_bool_exp
+  ): user_wishlist_aggregate!
+
+  """
   fetch data from the table: "auth.users"
   """
   users(
@@ -3238,6 +7085,319 @@ type query_root {
     """filter the rows returned"""
     where: users_bool_exp
   ): [users!]!
+}
+
+"""
+columns and relationships of "rating"
+"""
+type rating {
+  """An object relationship"""
+  clothing: clothing
+  clothingId: Int
+  commentOnClothing: String
+  commentOnUser: String
+  createdAt: timestamp
+  star: Int
+  title: String
+}
+
+"""
+aggregated selection of "rating"
+"""
+type rating_aggregate {
+  aggregate: rating_aggregate_fields
+  nodes: [rating!]!
+}
+
+"""
+aggregate fields of "rating"
+"""
+type rating_aggregate_fields {
+  avg: rating_avg_fields
+  count(columns: [rating_select_column!], distinct: Boolean): Int!
+  max: rating_max_fields
+  min: rating_min_fields
+  stddev: rating_stddev_fields
+  stddev_pop: rating_stddev_pop_fields
+  stddev_samp: rating_stddev_samp_fields
+  sum: rating_sum_fields
+  var_pop: rating_var_pop_fields
+  var_samp: rating_var_samp_fields
+  variance: rating_variance_fields
+}
+
+"""
+order by aggregate values of table "rating"
+"""
+input rating_aggregate_order_by {
+  avg: rating_avg_order_by
+  count: order_by
+  max: rating_max_order_by
+  min: rating_min_order_by
+  stddev: rating_stddev_order_by
+  stddev_pop: rating_stddev_pop_order_by
+  stddev_samp: rating_stddev_samp_order_by
+  sum: rating_sum_order_by
+  var_pop: rating_var_pop_order_by
+  var_samp: rating_var_samp_order_by
+  variance: rating_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "rating"
+"""
+input rating_arr_rel_insert_input {
+  data: [rating_insert_input!]!
+}
+
+"""aggregate avg on columns"""
+type rating_avg_fields {
+  clothingId: Float
+  star: Float
+}
+
+"""
+order by avg() on columns of table "rating"
+"""
+input rating_avg_order_by {
+  clothingId: order_by
+  star: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "rating". All fields are combined with a logical 'AND'.
+"""
+input rating_bool_exp {
+  _and: [rating_bool_exp!]
+  _not: rating_bool_exp
+  _or: [rating_bool_exp!]
+  clothing: clothing_bool_exp
+  clothingId: Int_comparison_exp
+  commentOnClothing: String_comparison_exp
+  commentOnUser: String_comparison_exp
+  createdAt: timestamp_comparison_exp
+  star: Int_comparison_exp
+  title: String_comparison_exp
+}
+
+"""
+input type for incrementing numeric columns in table "rating"
+"""
+input rating_inc_input {
+  clothingId: Int
+  star: Int
+}
+
+"""
+input type for inserting data into table "rating"
+"""
+input rating_insert_input {
+  clothing: clothing_obj_rel_insert_input
+  clothingId: Int
+  commentOnClothing: String
+  commentOnUser: String
+  createdAt: timestamp
+  star: Int
+  title: String
+}
+
+"""aggregate max on columns"""
+type rating_max_fields {
+  clothingId: Int
+  commentOnClothing: String
+  commentOnUser: String
+  createdAt: timestamp
+  star: Int
+  title: String
+}
+
+"""
+order by max() on columns of table "rating"
+"""
+input rating_max_order_by {
+  clothingId: order_by
+  commentOnClothing: order_by
+  commentOnUser: order_by
+  createdAt: order_by
+  star: order_by
+  title: order_by
+}
+
+"""aggregate min on columns"""
+type rating_min_fields {
+  clothingId: Int
+  commentOnClothing: String
+  commentOnUser: String
+  createdAt: timestamp
+  star: Int
+  title: String
+}
+
+"""
+order by min() on columns of table "rating"
+"""
+input rating_min_order_by {
+  clothingId: order_by
+  commentOnClothing: order_by
+  commentOnUser: order_by
+  createdAt: order_by
+  star: order_by
+  title: order_by
+}
+
+"""
+response of any mutation on the table "rating"
+"""
+type rating_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [rating!]!
+}
+
+"""Ordering options when selecting data from "rating"."""
+input rating_order_by {
+  clothing: clothing_order_by
+  clothingId: order_by
+  commentOnClothing: order_by
+  commentOnUser: order_by
+  createdAt: order_by
+  star: order_by
+  title: order_by
+}
+
+"""
+select columns of table "rating"
+"""
+enum rating_select_column {
+  """column name"""
+  clothingId
+
+  """column name"""
+  commentOnClothing
+
+  """column name"""
+  commentOnUser
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  star
+
+  """column name"""
+  title
+}
+
+"""
+input type for updating data in table "rating"
+"""
+input rating_set_input {
+  clothingId: Int
+  commentOnClothing: String
+  commentOnUser: String
+  createdAt: timestamp
+  star: Int
+  title: String
+}
+
+"""aggregate stddev on columns"""
+type rating_stddev_fields {
+  clothingId: Float
+  star: Float
+}
+
+"""
+order by stddev() on columns of table "rating"
+"""
+input rating_stddev_order_by {
+  clothingId: order_by
+  star: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type rating_stddev_pop_fields {
+  clothingId: Float
+  star: Float
+}
+
+"""
+order by stddev_pop() on columns of table "rating"
+"""
+input rating_stddev_pop_order_by {
+  clothingId: order_by
+  star: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type rating_stddev_samp_fields {
+  clothingId: Float
+  star: Float
+}
+
+"""
+order by stddev_samp() on columns of table "rating"
+"""
+input rating_stddev_samp_order_by {
+  clothingId: order_by
+  star: order_by
+}
+
+"""aggregate sum on columns"""
+type rating_sum_fields {
+  clothingId: Int
+  star: Int
+}
+
+"""
+order by sum() on columns of table "rating"
+"""
+input rating_sum_order_by {
+  clothingId: order_by
+  star: order_by
+}
+
+"""aggregate var_pop on columns"""
+type rating_var_pop_fields {
+  clothingId: Float
+  star: Float
+}
+
+"""
+order by var_pop() on columns of table "rating"
+"""
+input rating_var_pop_order_by {
+  clothingId: order_by
+  star: order_by
+}
+
+"""aggregate var_samp on columns"""
+type rating_var_samp_fields {
+  clothingId: Float
+  star: Float
+}
+
+"""
+order by var_samp() on columns of table "rating"
+"""
+input rating_var_samp_order_by {
+  clothingId: order_by
+  star: order_by
+}
+
+"""aggregate variance on columns"""
+type rating_variance_fields {
+  clothingId: Float
+  star: Float
+}
+
+"""
+order by variance() on columns of table "rating"
+"""
+input rating_variance_order_by {
+  clothingId: order_by
+  star: order_by
 }
 
 type subscription_root {
@@ -3591,6 +7751,177 @@ type subscription_root {
     where: buckets_bool_exp
   ): buckets_aggregate!
 
+  """
+  fetch data from the table: "chatroom"
+  """
+  chatroom(
+    """distinct select on columns"""
+    distinct_on: [chatroom_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_bool_exp
+  ): [chatroom!]!
+
+  """
+  fetch aggregated fields from the table: "chatroom"
+  """
+  chatroom_aggregate(
+    """distinct select on columns"""
+    distinct_on: [chatroom_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_bool_exp
+  ): chatroom_aggregate!
+
+  """fetch data from the table: "chatroom" using primary key columns"""
+  chatroom_by_pk(id: Int!): chatroom
+
+  """
+  fetch data from the table: "chatroom_message"
+  """
+  chatroom_message(
+    """distinct select on columns"""
+    distinct_on: [chatroom_message_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_message_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_message_bool_exp
+  ): [chatroom_message!]!
+
+  """
+  fetch aggregated fields from the table: "chatroom_message"
+  """
+  chatroom_message_aggregate(
+    """distinct select on columns"""
+    distinct_on: [chatroom_message_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [chatroom_message_order_by!]
+
+    """filter the rows returned"""
+    where: chatroom_message_bool_exp
+  ): chatroom_message_aggregate!
+
+  """
+  fetch data from the table: "chatroom_message" using primary key columns
+  """
+  chatroom_message_by_pk(id: Int!): chatroom_message
+
+  """
+  fetch data from the table: "clothing"
+  """
+  clothing(
+    """distinct select on columns"""
+    distinct_on: [clothing_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_bool_exp
+  ): [clothing!]!
+
+  """
+  fetch aggregated fields from the table: "clothing"
+  """
+  clothing_aggregate(
+    """distinct select on columns"""
+    distinct_on: [clothing_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_bool_exp
+  ): clothing_aggregate!
+
+  """fetch data from the table: "clothing" using primary key columns"""
+  clothing_by_pk(id: Int!): clothing
+
+  """
+  fetch data from the table: "clothing_status"
+  """
+  clothing_status(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): [clothing_status!]!
+
+  """
+  fetch aggregated fields from the table: "clothing_status"
+  """
+  clothing_status_aggregate(
+    """distinct select on columns"""
+    distinct_on: [clothing_status_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [clothing_status_order_by!]
+
+    """filter the rows returned"""
+    where: clothing_status_bool_exp
+  ): clothing_status_aggregate!
+
   """fetch data from the table: "storage.files" using primary key columns"""
   file(id: uuid!): files
 
@@ -3634,6 +7965,129 @@ type subscription_root {
     where: files_bool_exp
   ): files_aggregate!
 
+  """
+  fetch data from the table: "group"
+  """
+  group(
+    """distinct select on columns"""
+    distinct_on: [group_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_order_by!]
+
+    """filter the rows returned"""
+    where: group_bool_exp
+  ): [group!]!
+
+  """
+  fetch aggregated fields from the table: "group"
+  """
+  group_aggregate(
+    """distinct select on columns"""
+    distinct_on: [group_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_order_by!]
+
+    """filter the rows returned"""
+    where: group_bool_exp
+  ): group_aggregate!
+
+  """fetch data from the table: "group" using primary key columns"""
+  group_by_pk(id: Int!): group
+
+  """
+  fetch data from the table: "group_member"
+  """
+  group_member(
+    """distinct select on columns"""
+    distinct_on: [group_member_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_member_order_by!]
+
+    """filter the rows returned"""
+    where: group_member_bool_exp
+  ): [group_member!]!
+
+  """
+  fetch aggregated fields from the table: "group_member"
+  """
+  group_member_aggregate(
+    """distinct select on columns"""
+    distinct_on: [group_member_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [group_member_order_by!]
+
+    """filter the rows returned"""
+    where: group_member_bool_exp
+  ): group_member_aggregate!
+
+  """
+  fetch data from the table: "rating"
+  """
+  rating(
+    """distinct select on columns"""
+    distinct_on: [rating_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [rating_order_by!]
+
+    """filter the rows returned"""
+    where: rating_bool_exp
+  ): [rating!]!
+
+  """
+  fetch aggregated fields from the table: "rating"
+  """
+  rating_aggregate(
+    """distinct select on columns"""
+    distinct_on: [rating_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [rating_order_by!]
+
+    """filter the rows returned"""
+    where: rating_bool_exp
+  ): rating_aggregate!
+
   """fetch data from the table: "auth.users" using primary key columns"""
   user(id: uuid!): users
 
@@ -3658,6 +8112,166 @@ type subscription_root {
   ): users_aggregate!
 
   """
+  fetch data from the table: "user_avatar"
+  """
+  user_avatar(
+    """distinct select on columns"""
+    distinct_on: [user_avatar_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_avatar_order_by!]
+
+    """filter the rows returned"""
+    where: user_avatar_bool_exp
+  ): [user_avatar!]!
+
+  """
+  fetch aggregated fields from the table: "user_avatar"
+  """
+  user_avatar_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_avatar_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_avatar_order_by!]
+
+    """filter the rows returned"""
+    where: user_avatar_bool_exp
+  ): user_avatar_aggregate!
+
+  """
+  fetch data from the table: "user_following"
+  """
+  user_following(
+    """distinct select on columns"""
+    distinct_on: [user_following_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_following_order_by!]
+
+    """filter the rows returned"""
+    where: user_following_bool_exp
+  ): [user_following!]!
+
+  """
+  fetch aggregated fields from the table: "user_following"
+  """
+  user_following_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_following_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_following_order_by!]
+
+    """filter the rows returned"""
+    where: user_following_bool_exp
+  ): user_following_aggregate!
+
+  """
+  fetch data from the table: "user_wardrobe"
+  """
+  user_wardrobe(
+    """distinct select on columns"""
+    distinct_on: [user_wardrobe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wardrobe_order_by!]
+
+    """filter the rows returned"""
+    where: user_wardrobe_bool_exp
+  ): [user_wardrobe!]!
+
+  """
+  fetch aggregated fields from the table: "user_wardrobe"
+  """
+  user_wardrobe_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_wardrobe_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wardrobe_order_by!]
+
+    """filter the rows returned"""
+    where: user_wardrobe_bool_exp
+  ): user_wardrobe_aggregate!
+
+  """
+  fetch data from the table: "user_wishlist"
+  """
+  user_wishlist(
+    """distinct select on columns"""
+    distinct_on: [user_wishlist_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wishlist_order_by!]
+
+    """filter the rows returned"""
+    where: user_wishlist_bool_exp
+  ): [user_wishlist!]!
+
+  """
+  fetch aggregated fields from the table: "user_wishlist"
+  """
+  user_wishlist_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_wishlist_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_wishlist_order_by!]
+
+    """filter the rows returned"""
+    where: user_wishlist_bool_exp
+  ): user_wishlist_aggregate!
+
+  """
   fetch data from the table: "auth.users"
   """
   users(
@@ -3678,6 +8292,23 @@ type subscription_root {
   ): [users!]!
 }
 
+scalar timestamp
+
+"""
+Boolean expression to compare columns of type "timestamp". All fields are combined with logical 'AND'.
+"""
+input timestamp_comparison_exp {
+  _eq: timestamp
+  _gt: timestamp
+  _gte: timestamp
+  _in: [timestamp!]
+  _is_null: Boolean
+  _lt: timestamp
+  _lte: timestamp
+  _neq: timestamp
+  _nin: [timestamp!]
+}
+
 scalar timestamptz
 
 """
@@ -3693,6 +8324,869 @@ input timestamptz_comparison_exp {
   _lte: timestamptz
   _neq: timestamptz
   _nin: [timestamptz!]
+}
+
+"""
+columns and relationships of "user_avatar"
+"""
+type user_avatar {
+  accessory(
+    """JSON select path"""
+    path: String
+  ): jsonb
+
+  """An object relationship"""
+  app_user: app_user
+  eyeColor(
+    """JSON select path"""
+    path: String
+  ): jsonb
+  hairStyle(
+    """JSON select path"""
+    path: String
+  ): jsonb
+  skinColor(
+    """JSON select path"""
+    path: String
+  ): jsonb
+  userId: String
+}
+
+"""
+aggregated selection of "user_avatar"
+"""
+type user_avatar_aggregate {
+  aggregate: user_avatar_aggregate_fields
+  nodes: [user_avatar!]!
+}
+
+"""
+aggregate fields of "user_avatar"
+"""
+type user_avatar_aggregate_fields {
+  count(columns: [user_avatar_select_column!], distinct: Boolean): Int!
+  max: user_avatar_max_fields
+  min: user_avatar_min_fields
+}
+
+"""
+order by aggregate values of table "user_avatar"
+"""
+input user_avatar_aggregate_order_by {
+  count: order_by
+  max: user_avatar_max_order_by
+  min: user_avatar_min_order_by
+}
+
+"""append existing jsonb value of filtered columns with new jsonb value"""
+input user_avatar_append_input {
+  accessory: jsonb
+  eyeColor: jsonb
+  hairStyle: jsonb
+  skinColor: jsonb
+}
+
+"""
+input type for inserting array relation for remote table "user_avatar"
+"""
+input user_avatar_arr_rel_insert_input {
+  data: [user_avatar_insert_input!]!
+}
+
+"""
+Boolean expression to filter rows from the table "user_avatar". All fields are combined with a logical 'AND'.
+"""
+input user_avatar_bool_exp {
+  _and: [user_avatar_bool_exp!]
+  _not: user_avatar_bool_exp
+  _or: [user_avatar_bool_exp!]
+  accessory: jsonb_comparison_exp
+  app_user: app_user_bool_exp
+  eyeColor: jsonb_comparison_exp
+  hairStyle: jsonb_comparison_exp
+  skinColor: jsonb_comparison_exp
+  userId: String_comparison_exp
+}
+
+"""
+delete the field or element with specified path (for JSON arrays, negative integers count from the end)
+"""
+input user_avatar_delete_at_path_input {
+  accessory: [String!]
+  eyeColor: [String!]
+  hairStyle: [String!]
+  skinColor: [String!]
+}
+
+"""
+delete the array element with specified index (negative integers count from the end). throws an error if top level container is not an array
+"""
+input user_avatar_delete_elem_input {
+  accessory: Int
+  eyeColor: Int
+  hairStyle: Int
+  skinColor: Int
+}
+
+"""
+delete key/value pair or string element. key/value pairs are matched based on their key value
+"""
+input user_avatar_delete_key_input {
+  accessory: String
+  eyeColor: String
+  hairStyle: String
+  skinColor: String
+}
+
+"""
+input type for inserting data into table "user_avatar"
+"""
+input user_avatar_insert_input {
+  accessory: jsonb
+  app_user: app_user_obj_rel_insert_input
+  eyeColor: jsonb
+  hairStyle: jsonb
+  skinColor: jsonb
+  userId: String
+}
+
+"""aggregate max on columns"""
+type user_avatar_max_fields {
+  userId: String
+}
+
+"""
+order by max() on columns of table "user_avatar"
+"""
+input user_avatar_max_order_by {
+  userId: order_by
+}
+
+"""aggregate min on columns"""
+type user_avatar_min_fields {
+  userId: String
+}
+
+"""
+order by min() on columns of table "user_avatar"
+"""
+input user_avatar_min_order_by {
+  userId: order_by
+}
+
+"""
+response of any mutation on the table "user_avatar"
+"""
+type user_avatar_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [user_avatar!]!
+}
+
+"""Ordering options when selecting data from "user_avatar"."""
+input user_avatar_order_by {
+  accessory: order_by
+  app_user: app_user_order_by
+  eyeColor: order_by
+  hairStyle: order_by
+  skinColor: order_by
+  userId: order_by
+}
+
+"""prepend existing jsonb value of filtered columns with new jsonb value"""
+input user_avatar_prepend_input {
+  accessory: jsonb
+  eyeColor: jsonb
+  hairStyle: jsonb
+  skinColor: jsonb
+}
+
+"""
+select columns of table "user_avatar"
+"""
+enum user_avatar_select_column {
+  """column name"""
+  accessory
+
+  """column name"""
+  eyeColor
+
+  """column name"""
+  hairStyle
+
+  """column name"""
+  skinColor
+
+  """column name"""
+  userId
+}
+
+"""
+input type for updating data in table "user_avatar"
+"""
+input user_avatar_set_input {
+  accessory: jsonb
+  eyeColor: jsonb
+  hairStyle: jsonb
+  skinColor: jsonb
+  userId: String
+}
+
+"""
+columns and relationships of "user_following"
+"""
+type user_following {
+  """An object relationship"""
+  appUserByUserid: app_user
+
+  """An object relationship"""
+  app_user: app_user
+  followedUserId: String
+  userId: String
+}
+
+"""
+aggregated selection of "user_following"
+"""
+type user_following_aggregate {
+  aggregate: user_following_aggregate_fields
+  nodes: [user_following!]!
+}
+
+"""
+aggregate fields of "user_following"
+"""
+type user_following_aggregate_fields {
+  count(columns: [user_following_select_column!], distinct: Boolean): Int!
+  max: user_following_max_fields
+  min: user_following_min_fields
+}
+
+"""
+order by aggregate values of table "user_following"
+"""
+input user_following_aggregate_order_by {
+  count: order_by
+  max: user_following_max_order_by
+  min: user_following_min_order_by
+}
+
+"""
+input type for inserting array relation for remote table "user_following"
+"""
+input user_following_arr_rel_insert_input {
+  data: [user_following_insert_input!]!
+}
+
+"""
+Boolean expression to filter rows from the table "user_following". All fields are combined with a logical 'AND'.
+"""
+input user_following_bool_exp {
+  _and: [user_following_bool_exp!]
+  _not: user_following_bool_exp
+  _or: [user_following_bool_exp!]
+  appUserByUserid: app_user_bool_exp
+  app_user: app_user_bool_exp
+  followedUserId: String_comparison_exp
+  userId: String_comparison_exp
+}
+
+"""
+input type for inserting data into table "user_following"
+"""
+input user_following_insert_input {
+  appUserByUserid: app_user_obj_rel_insert_input
+  app_user: app_user_obj_rel_insert_input
+  followedUserId: String
+  userId: String
+}
+
+"""aggregate max on columns"""
+type user_following_max_fields {
+  followedUserId: String
+  userId: String
+}
+
+"""
+order by max() on columns of table "user_following"
+"""
+input user_following_max_order_by {
+  followedUserId: order_by
+  userId: order_by
+}
+
+"""aggregate min on columns"""
+type user_following_min_fields {
+  followedUserId: String
+  userId: String
+}
+
+"""
+order by min() on columns of table "user_following"
+"""
+input user_following_min_order_by {
+  followedUserId: order_by
+  userId: order_by
+}
+
+"""
+response of any mutation on the table "user_following"
+"""
+type user_following_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [user_following!]!
+}
+
+"""Ordering options when selecting data from "user_following"."""
+input user_following_order_by {
+  appUserByUserid: app_user_order_by
+  app_user: app_user_order_by
+  followedUserId: order_by
+  userId: order_by
+}
+
+"""
+select columns of table "user_following"
+"""
+enum user_following_select_column {
+  """column name"""
+  followedUserId
+
+  """column name"""
+  userId
+}
+
+"""
+input type for updating data in table "user_following"
+"""
+input user_following_set_input {
+  followedUserId: String
+  userId: String
+}
+
+"""
+columns and relationships of "user_wardrobe"
+"""
+type user_wardrobe {
+  """An object relationship"""
+  app_user: app_user
+
+  """An object relationship"""
+  clothing: clothing
+  clothingId: Int
+  userId: String
+}
+
+"""
+aggregated selection of "user_wardrobe"
+"""
+type user_wardrobe_aggregate {
+  aggregate: user_wardrobe_aggregate_fields
+  nodes: [user_wardrobe!]!
+}
+
+"""
+aggregate fields of "user_wardrobe"
+"""
+type user_wardrobe_aggregate_fields {
+  avg: user_wardrobe_avg_fields
+  count(columns: [user_wardrobe_select_column!], distinct: Boolean): Int!
+  max: user_wardrobe_max_fields
+  min: user_wardrobe_min_fields
+  stddev: user_wardrobe_stddev_fields
+  stddev_pop: user_wardrobe_stddev_pop_fields
+  stddev_samp: user_wardrobe_stddev_samp_fields
+  sum: user_wardrobe_sum_fields
+  var_pop: user_wardrobe_var_pop_fields
+  var_samp: user_wardrobe_var_samp_fields
+  variance: user_wardrobe_variance_fields
+}
+
+"""
+order by aggregate values of table "user_wardrobe"
+"""
+input user_wardrobe_aggregate_order_by {
+  avg: user_wardrobe_avg_order_by
+  count: order_by
+  max: user_wardrobe_max_order_by
+  min: user_wardrobe_min_order_by
+  stddev: user_wardrobe_stddev_order_by
+  stddev_pop: user_wardrobe_stddev_pop_order_by
+  stddev_samp: user_wardrobe_stddev_samp_order_by
+  sum: user_wardrobe_sum_order_by
+  var_pop: user_wardrobe_var_pop_order_by
+  var_samp: user_wardrobe_var_samp_order_by
+  variance: user_wardrobe_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "user_wardrobe"
+"""
+input user_wardrobe_arr_rel_insert_input {
+  data: [user_wardrobe_insert_input!]!
+}
+
+"""aggregate avg on columns"""
+type user_wardrobe_avg_fields {
+  clothingId: Float
+}
+
+"""
+order by avg() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_avg_order_by {
+  clothingId: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "user_wardrobe". All fields are combined with a logical 'AND'.
+"""
+input user_wardrobe_bool_exp {
+  _and: [user_wardrobe_bool_exp!]
+  _not: user_wardrobe_bool_exp
+  _or: [user_wardrobe_bool_exp!]
+  app_user: app_user_bool_exp
+  clothing: clothing_bool_exp
+  clothingId: Int_comparison_exp
+  userId: String_comparison_exp
+}
+
+"""
+input type for incrementing numeric columns in table "user_wardrobe"
+"""
+input user_wardrobe_inc_input {
+  clothingId: Int
+}
+
+"""
+input type for inserting data into table "user_wardrobe"
+"""
+input user_wardrobe_insert_input {
+  app_user: app_user_obj_rel_insert_input
+  clothing: clothing_obj_rel_insert_input
+  clothingId: Int
+  userId: String
+}
+
+"""aggregate max on columns"""
+type user_wardrobe_max_fields {
+  clothingId: Int
+  userId: String
+}
+
+"""
+order by max() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_max_order_by {
+  clothingId: order_by
+  userId: order_by
+}
+
+"""aggregate min on columns"""
+type user_wardrobe_min_fields {
+  clothingId: Int
+  userId: String
+}
+
+"""
+order by min() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_min_order_by {
+  clothingId: order_by
+  userId: order_by
+}
+
+"""
+response of any mutation on the table "user_wardrobe"
+"""
+type user_wardrobe_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [user_wardrobe!]!
+}
+
+"""Ordering options when selecting data from "user_wardrobe"."""
+input user_wardrobe_order_by {
+  app_user: app_user_order_by
+  clothing: clothing_order_by
+  clothingId: order_by
+  userId: order_by
+}
+
+"""
+select columns of table "user_wardrobe"
+"""
+enum user_wardrobe_select_column {
+  """column name"""
+  clothingId
+
+  """column name"""
+  userId
+}
+
+"""
+input type for updating data in table "user_wardrobe"
+"""
+input user_wardrobe_set_input {
+  clothingId: Int
+  userId: String
+}
+
+"""aggregate stddev on columns"""
+type user_wardrobe_stddev_fields {
+  clothingId: Float
+}
+
+"""
+order by stddev() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_stddev_order_by {
+  clothingId: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type user_wardrobe_stddev_pop_fields {
+  clothingId: Float
+}
+
+"""
+order by stddev_pop() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_stddev_pop_order_by {
+  clothingId: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type user_wardrobe_stddev_samp_fields {
+  clothingId: Float
+}
+
+"""
+order by stddev_samp() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_stddev_samp_order_by {
+  clothingId: order_by
+}
+
+"""aggregate sum on columns"""
+type user_wardrobe_sum_fields {
+  clothingId: Int
+}
+
+"""
+order by sum() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_sum_order_by {
+  clothingId: order_by
+}
+
+"""aggregate var_pop on columns"""
+type user_wardrobe_var_pop_fields {
+  clothingId: Float
+}
+
+"""
+order by var_pop() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_var_pop_order_by {
+  clothingId: order_by
+}
+
+"""aggregate var_samp on columns"""
+type user_wardrobe_var_samp_fields {
+  clothingId: Float
+}
+
+"""
+order by var_samp() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_var_samp_order_by {
+  clothingId: order_by
+}
+
+"""aggregate variance on columns"""
+type user_wardrobe_variance_fields {
+  clothingId: Float
+}
+
+"""
+order by variance() on columns of table "user_wardrobe"
+"""
+input user_wardrobe_variance_order_by {
+  clothingId: order_by
+}
+
+"""
+columns and relationships of "user_wishlist"
+"""
+type user_wishlist {
+  """An object relationship"""
+  app_user: app_user
+
+  """An object relationship"""
+  clothing: clothing
+  clothingId: Int
+  createdAt: timestamp
+  userId: String
+}
+
+"""
+aggregated selection of "user_wishlist"
+"""
+type user_wishlist_aggregate {
+  aggregate: user_wishlist_aggregate_fields
+  nodes: [user_wishlist!]!
+}
+
+"""
+aggregate fields of "user_wishlist"
+"""
+type user_wishlist_aggregate_fields {
+  avg: user_wishlist_avg_fields
+  count(columns: [user_wishlist_select_column!], distinct: Boolean): Int!
+  max: user_wishlist_max_fields
+  min: user_wishlist_min_fields
+  stddev: user_wishlist_stddev_fields
+  stddev_pop: user_wishlist_stddev_pop_fields
+  stddev_samp: user_wishlist_stddev_samp_fields
+  sum: user_wishlist_sum_fields
+  var_pop: user_wishlist_var_pop_fields
+  var_samp: user_wishlist_var_samp_fields
+  variance: user_wishlist_variance_fields
+}
+
+"""
+order by aggregate values of table "user_wishlist"
+"""
+input user_wishlist_aggregate_order_by {
+  avg: user_wishlist_avg_order_by
+  count: order_by
+  max: user_wishlist_max_order_by
+  min: user_wishlist_min_order_by
+  stddev: user_wishlist_stddev_order_by
+  stddev_pop: user_wishlist_stddev_pop_order_by
+  stddev_samp: user_wishlist_stddev_samp_order_by
+  sum: user_wishlist_sum_order_by
+  var_pop: user_wishlist_var_pop_order_by
+  var_samp: user_wishlist_var_samp_order_by
+  variance: user_wishlist_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "user_wishlist"
+"""
+input user_wishlist_arr_rel_insert_input {
+  data: [user_wishlist_insert_input!]!
+}
+
+"""aggregate avg on columns"""
+type user_wishlist_avg_fields {
+  clothingId: Float
+}
+
+"""
+order by avg() on columns of table "user_wishlist"
+"""
+input user_wishlist_avg_order_by {
+  clothingId: order_by
+}
+
+"""
+Boolean expression to filter rows from the table "user_wishlist". All fields are combined with a logical 'AND'.
+"""
+input user_wishlist_bool_exp {
+  _and: [user_wishlist_bool_exp!]
+  _not: user_wishlist_bool_exp
+  _or: [user_wishlist_bool_exp!]
+  app_user: app_user_bool_exp
+  clothing: clothing_bool_exp
+  clothingId: Int_comparison_exp
+  createdAt: timestamp_comparison_exp
+  userId: String_comparison_exp
+}
+
+"""
+input type for incrementing numeric columns in table "user_wishlist"
+"""
+input user_wishlist_inc_input {
+  clothingId: Int
+}
+
+"""
+input type for inserting data into table "user_wishlist"
+"""
+input user_wishlist_insert_input {
+  app_user: app_user_obj_rel_insert_input
+  clothing: clothing_obj_rel_insert_input
+  clothingId: Int
+  createdAt: timestamp
+  userId: String
+}
+
+"""aggregate max on columns"""
+type user_wishlist_max_fields {
+  clothingId: Int
+  createdAt: timestamp
+  userId: String
+}
+
+"""
+order by max() on columns of table "user_wishlist"
+"""
+input user_wishlist_max_order_by {
+  clothingId: order_by
+  createdAt: order_by
+  userId: order_by
+}
+
+"""aggregate min on columns"""
+type user_wishlist_min_fields {
+  clothingId: Int
+  createdAt: timestamp
+  userId: String
+}
+
+"""
+order by min() on columns of table "user_wishlist"
+"""
+input user_wishlist_min_order_by {
+  clothingId: order_by
+  createdAt: order_by
+  userId: order_by
+}
+
+"""
+response of any mutation on the table "user_wishlist"
+"""
+type user_wishlist_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [user_wishlist!]!
+}
+
+"""Ordering options when selecting data from "user_wishlist"."""
+input user_wishlist_order_by {
+  app_user: app_user_order_by
+  clothing: clothing_order_by
+  clothingId: order_by
+  createdAt: order_by
+  userId: order_by
+}
+
+"""
+select columns of table "user_wishlist"
+"""
+enum user_wishlist_select_column {
+  """column name"""
+  clothingId
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  userId
+}
+
+"""
+input type for updating data in table "user_wishlist"
+"""
+input user_wishlist_set_input {
+  clothingId: Int
+  createdAt: timestamp
+  userId: String
+}
+
+"""aggregate stddev on columns"""
+type user_wishlist_stddev_fields {
+  clothingId: Float
+}
+
+"""
+order by stddev() on columns of table "user_wishlist"
+"""
+input user_wishlist_stddev_order_by {
+  clothingId: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type user_wishlist_stddev_pop_fields {
+  clothingId: Float
+}
+
+"""
+order by stddev_pop() on columns of table "user_wishlist"
+"""
+input user_wishlist_stddev_pop_order_by {
+  clothingId: order_by
+}
+
+"""aggregate stddev_samp on columns"""
+type user_wishlist_stddev_samp_fields {
+  clothingId: Float
+}
+
+"""
+order by stddev_samp() on columns of table "user_wishlist"
+"""
+input user_wishlist_stddev_samp_order_by {
+  clothingId: order_by
+}
+
+"""aggregate sum on columns"""
+type user_wishlist_sum_fields {
+  clothingId: Int
+}
+
+"""
+order by sum() on columns of table "user_wishlist"
+"""
+input user_wishlist_sum_order_by {
+  clothingId: order_by
+}
+
+"""aggregate var_pop on columns"""
+type user_wishlist_var_pop_fields {
+  clothingId: Float
+}
+
+"""
+order by var_pop() on columns of table "user_wishlist"
+"""
+input user_wishlist_var_pop_order_by {
+  clothingId: order_by
+}
+
+"""aggregate var_samp on columns"""
+type user_wishlist_var_samp_fields {
+  clothingId: Float
+}
+
+"""
+order by var_samp() on columns of table "user_wishlist"
+"""
+input user_wishlist_var_samp_order_by {
+  clothingId: order_by
+}
+
+"""aggregate variance on columns"""
+type user_wishlist_variance_fields {
+  clothingId: Float
+}
+
+"""
+order by variance() on columns of table "user_wishlist"
+"""
+input user_wishlist_variance_order_by {
+  clothingId: order_by
 }
 
 """

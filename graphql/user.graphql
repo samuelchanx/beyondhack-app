@@ -1,5 +1,21 @@
+fragment AppUser on app_user {
+  id
+  name
+  gender
+  createdAt
+  spaceLocation
+  loginProvider
+  lastOnline
+}
+
 query GetUser($id: String!) {
   app_user_by_pk(id: $id) {
     id
+  }
+}
+
+mutation AddUser($id: String!) {
+  insert_app_user_one(object: { id: $id, loginProvider: "email" }) {
+    ...AppUser
   }
 }

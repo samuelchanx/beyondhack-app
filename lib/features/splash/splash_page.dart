@@ -6,6 +6,7 @@ import 'package:beyondhack/routes/app_pages.dart';
 import 'package:beyondhack/ui/assets/assets.gen.dart';
 import 'package:beyondhack/ui/utils/ui_helper.dart';
 import 'package:beyondhack/utils/globals.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:styled_widget/styled_widget.dart';
@@ -40,13 +41,14 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> _reLoginIfAvailable() async {
+    await FirebaseAuth.instance.signInAnonymously();
     try {
       await AuthRepository.instance.client.auth.signInWithStoredCredentials();
       logger.i('Logged in');
       isLoggedIn = true;
     } catch (e) {
       isLoggedIn = false;
-      logger.i('Not logged in');
+      logger.i('Not logged in: $e');
     }
   }
 

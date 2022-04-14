@@ -27,53 +27,51 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: FlutterLogin(
-          title: 'BeyondShare',
-          logo: AssetImage(Assets.images.logoTransparent.path),
-          onLogin: (data) async {
-            logger.d(data);
-            final success = await authRepository.signInWithEmailPassword(
-              data.name,
-              data.password,
-            );
-            if (!success) {
-              return 'Failed to login';
-            }
-            return null;
-          },
-          onSignup: (data) {
-            logger.d(data);
-          },
-          loginProviders: [
-            LoginProvider(
-              icon: FontAwesomeIcons.google,
-              label: 'Google',
-              callback: () async {
-                // debugPrint('start google sign in');
-                // await Future.delayed(loginTime);
-                // debugPrint('stop google sign in');
-                return null;
-              },
-            ),
-            LoginProvider(
-              icon: FontAwesomeIcons.facebookF,
-              label: 'Facebook',
-              callback: () async {
-                // debugPrint('start facebook sign in');
-                // await Future.delayed(loginTime);
-                // debugPrint('stop facebook sign in');
-                return null;
-              },
-            ),
-          ],
-          onSubmitAnimationCompleted: () {
-            Get.offAllNamed(routeName(HomePage));
-          },
-          onRecoverPassword: (data) {
-            logger.d(data);
-          },
-        ),
+      body: FlutterLogin(
+        title: 'BeyondShare',
+        logo: AssetImage(Assets.images.logoTransparent.path),
+        onLogin: (data) async {
+          logger.d(data);
+          final success = await authRepository.signInWithEmailPassword(
+            data.name,
+            data.password,
+          );
+          if (!success) {
+            return 'Failed to login';
+          }
+          return null;
+        },
+        onSignup: (data) {
+          logger.d(data);
+        },
+        loginProviders: [
+          LoginProvider(
+            icon: FontAwesomeIcons.google,
+            label: 'Google',
+            callback: () async {
+              // debugPrint('start google sign in');
+              // await Future.delayed(loginTime);
+              // debugPrint('stop google sign in');
+              return null;
+            },
+          ),
+          LoginProvider(
+            icon: FontAwesomeIcons.facebookF,
+            label: 'Facebook',
+            callback: () async {
+              // debugPrint('start facebook sign in');
+              // await Future.delayed(loginTime);
+              // debugPrint('stop facebook sign in');
+              return null;
+            },
+          ),
+        ],
+        onSubmitAnimationCompleted: () {
+          Get.offAllNamed(routeName(HomePage));
+        },
+        onRecoverPassword: (data) {
+          logger.d(data);
+        },
       ),
     );
   }
