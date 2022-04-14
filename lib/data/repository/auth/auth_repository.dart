@@ -42,7 +42,7 @@ class AuthRepository {
   // }
 
   Future signOut() async {
-    await runAsync(FirebaseAuth.instance.signOut());
+    // await runAsync(FirebaseAuth.instance.signOut());
     await runAsync(client.auth.signOut());
   }
 

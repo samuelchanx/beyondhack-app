@@ -10,6 +10,8 @@ class $AssetsImagesGen {
 
   AssetGenImage get gradientBackground =>
       const AssetGenImage('assets/images/gradient_background.png');
+  AssetGenImage get homeBackground =>
+      const AssetGenImage('assets/images/home_background.png');
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
   AssetGenImage get logoTransparent =>
       const AssetGenImage('assets/images/logo_transparent.png');
