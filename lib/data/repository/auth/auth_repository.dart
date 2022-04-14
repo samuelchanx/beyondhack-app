@@ -1,18 +1,11 @@
-import 'dart:convert';
-
-import 'package:app_links/app_links.dart';
 import 'package:beyondhack/data/datasource/remote_datasource.dart';
 import 'package:beyondhack/data/model/graphql/user/user.dart';
 import 'package:beyondhack/data/model/result/result.f.dart';
 import 'package:beyondhack/ui/utils/ui_helper.dart';
 import 'package:beyondhack/utils/run_loading_future.dart';
-import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:get/get.dart';
 import 'package:nhost_sdk/nhost_sdk.dart';
 
-import '../../../utils/globals.dart';
 import '../../datasource/datasource_constants.dart';
 
 class AuthRepository {
@@ -67,6 +60,7 @@ class AuthRepository {
     ));
     if (results is Success) {
       final apiClient = ApiClient();
+      // Add to database
       await runAsync(apiClient.generalMutation(
         AddUserMutation(variables: AddUserArguments(id: uid!)),
       ));
