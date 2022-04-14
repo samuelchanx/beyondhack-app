@@ -43,6 +43,9 @@ dependencies:
   flame: ^1.1.0
   flame_audio: 
   audioplayers: ^0.20.1
+  sign_button: ^2.0.2
+  flutter_login: ^3.2.0
+  font_awesome_flutter: 
 
 dev_dependencies:
   flutter_test:
