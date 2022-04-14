@@ -26,7 +26,7 @@ class AppStyledIcon extends StatelessWidget {
             color: Colors.black87,
           )
         ])
-        .constrained(width: 40, height: 40)
+        .constrained(width: iconSize * 1.6, height: iconSize * 1.6)
         .padding(all: 4)
         .decorated(
           shape: BoxShape.circle,

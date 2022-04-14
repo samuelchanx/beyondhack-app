@@ -5,6 +5,7 @@ import 'package:beyondhack/ui/components/chat_bubble.dart';
 import 'package:beyondhack/ui/styles/app_colors.dart';
 import 'package:beyondhack/ui/styles/app_styles.dart';
 import 'package:beyondhack/ui/utils/ui_helper.dart';
+import 'package:beyondhack/utils/globals.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,22 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
+        floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            AppStyledIcon(
+              icon: Icons.location_on,
+              iconSize: 32,
+            ).bounce(onTap: () {}),
+            const SizedBox(height: 8),
+            AppStyledIcon(
+              icon: Icons.search,
+              iconSize: 32,
+            ).bounce(onTap: () {
+              logger.i('Tap search');
+            }),
+          ],
+        ),
         body: Stack(
           children: [
             SizedBox(
@@ -71,10 +88,10 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppStyledIcon(icon: Icons.more_horiz),
-                Text(
+                const AppStyledIcon(icon: Icons.more_horiz),
+                const Text(
                   "My Space",
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
@@ -92,7 +109,7 @@ class HomePage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(32),
                     )
                     .width(Get.width * 0.6),
-                AppStyledIcon(icon: Icons.contact_mail),
+                const AppStyledIcon(icon: Icons.contact_mail),
               ],
             ).width(Get.width - 48).padding(top: 32, horizontal: 24).positioned(top: 0),
           ],
